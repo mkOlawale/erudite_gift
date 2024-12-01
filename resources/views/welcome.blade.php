@@ -36,16 +36,28 @@
             <input type="text" placeholder="Search products...">
             <button><img src="/images/search-icon.png" alt="Search"></button>
           </div>
-      
-          <!-- Cart Icon -->
-          <div class="cart">
-            <a href="#"><img src="/images/cart-icon.png" alt="Cart"></a>
-          </div>
+            <!-- Cart Icon -->
+            <div class="cart">
+              <a href="#"><img src="/images/cart-icon.png" alt="Cart"></a>
+            </div>
+          @if (Route::has('login'))
+          @auth
           <div class="authentication_button">
-            <a href="#">Login</a>
-            <a href="#">Register  </a>
+            
+          <a href="#">Your Order</a>
+        </div>
+          <x-app-layout>
+  
+          </x-app-layout>
+       
+          @else
+        
+          <div class="authentication_button">
+            <a href="{{ route('login') }}">Login</a>
+            <a href="{{ route('register') }}">Register  </a>
           </div>
-      
+          @endauth
+          @endif
           <!-- Hamburger Menu for Mobile -->
           <div class="hamburger-menu" onclick="toggleMenu()">
             <span></span>
@@ -148,7 +160,7 @@
                 <img src="images/european.png" width="150" height="150">
                 <h3>Rest of europe</h3>
               </a>
-              <a class="_country_img_contain" href="{{ url('/gift/others_part/world') }}" style="">
+              <a class="_country_img_contain" href="{{ url('/gift/others_part') }}" style="">
                 <img src="images/other.png" width="150" height="150">
                 <h3>Other part of america</h3>
               </a>

@@ -28,9 +28,15 @@ Route::middleware([
     })->name('dashboard');
 });
 
+Route::get('/redirect', [giftController::class, 'redirect']);     
 Route::get('/gift/usa', [giftController::class, 'us_available_gift']);     
 Route::get('/gift/united_kingdom', [giftController::class, 'gift_to_uk']);     
 Route::get('/gift/canada', [giftController::class, 'canadaGift']);     
 Route::get('/gift/asian', [giftController::class, 'AsianGift']);     
 Route::get('/gift/europe', [giftController::class, 'europeGift']);     
-Route::get('/gift/others_part/world', [giftController::class, 'othersGift']);     
+Route::get('/gift/others_part', [giftController::class, 'othersGift']);   
+
+
+// product single us
+Route::get('/us/jewelry', [giftController::class, 'jewelry']);   
+
