@@ -47,4 +47,10 @@ class giftController extends Controller
     public function jewelry(){
         return view('Us_product.jewelry');
     }
+    public function ProductsDetails($id){
+
+        $product = product::find($id);
+
+        return view('home.product_details', compact('product'));
+    }
 }

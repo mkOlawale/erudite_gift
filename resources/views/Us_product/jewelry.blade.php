@@ -22,7 +22,7 @@
                     <div  class="info_container">
                         <p>14K Real Solid Yellow Gold Cubic Zirconia Dainty Classic Engagement Wedding Ring</p>
                         <h5>#40,000</h5>
-                        <button><a href="">Buy Now</a></button>
+                        <button><a href="{{ url('/product_details', id) }}">Buy Now</a></button>
                     </div>
                 </div>
                 <div class="main_prod_card">

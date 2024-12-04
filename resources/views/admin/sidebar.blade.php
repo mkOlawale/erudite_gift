@@ -74,7 +74,15 @@
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{{ url('/view_products') }}">Add Products</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ url('/usa_product') }}">USA Products</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ url('/showusa_product') }}">Show USA Products</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ url('/uk_products') }}">UK Products</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ url('/showuk_product') }}">Show Uk Products</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ url('/canada_products') }}">Canada Products</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ url('/showcanada_products') }}">Show Canada Products</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ url('/europe_products') }}">Europe Products</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ url('/showeurope_products') }}">Show Europe Products</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ url('/others_products') }}">Others Products</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{ url('show_product') }}">Show Products</a></li>
               </ul>
             </div>
