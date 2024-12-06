@@ -99,8 +99,8 @@ class adminController extends Controller
     }
     public function showUkProduct(){
         $product = ukproduct::all();
-
         return view('admin.showuk', compact('product'));
+        
     }
     public function editUkProducts($id){
 
@@ -212,18 +212,18 @@ class adminController extends Controller
 
         return redirect()->back()->with('message', 'Product is being added succesfully, No stress! shogbo omo iya mi!!');
     }
-    public function showUkProduct(){
+    public function showEuropeProduct(){
         $product = ukproduct::all();
 
         return view('admin.showuk', compact('product'));
     }
-    public function editUkProducts($id){
+    public function editEuropeProducts($id){
 
         $product = ukproduct::find($id);
         
         return view('admin.updateuk', compact('product'));
     }
-    public function updateUkProducts(Request $request, $id){
+    public function updateEuropeProducts(Request $request, $id){
 
         $product = ukproduct::find($id);
 

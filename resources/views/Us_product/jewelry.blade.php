@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="title_container">
-        <p>Home / Shop / UK STORE / Necklace & Jewelries UK Store</p>
+        <p>Home / Shop / US STORE / Necklace & Jewelries UK Store</p>
         <h1>Necklace & Jewelries UK Store</h1>
     </div>
     <div class="prod_whole_container">
@@ -17,81 +17,17 @@
             <!-- <h1>hello world</h1> -->
 
             <div class="main_prod_cobtainer">
+                @foreach($product as $prod)
                 <div class="main_prod_card">
-                    <img src="../images/gift2.jpg" width="180" height="180">
+                    <img src="/product/{{ $prod->image }}" width="180" height="180">
                     <div  class="info_container">
-                        <p>14K Real Solid Yellow Gold Cubic Zirconia Dainty Classic Engagement Wedding Ring</p>
-                        <h5>#40,000</h5>
-                        <button><a href="{{ url('/product_details', id) }}">Buy Now</a></button>
-                    </div>
-                </div>
-                <div class="main_prod_card">
-                    <img src="../images/gift2.jpg" width="180" height="180">
-                    <div  class="info_container">
-                        <p>14mm cuban chain available in gold and silver</p>
-                        <h5>#40,000</h5>
+                        <p>{{ $prod->title}}</p>
+                        <h5>#{{ $prod->price}}</h5>
                         <button><a href="">Buy Now</a></button>
                     </div>
                 </div>
-                <div class="main_prod_card">
-                    <img src="../images/gift2.jpg" width="180" height="180">
-                    <div  class="info_container">
-                        <p>2pcs Romantic Blue Crystal Butterfly Necklace for Women</p>
-                        <h5>#40,000</h5>
-                        <button><a href="">Buy Now</a></button>
-
-                    </div>
-                </div>
-                <div class="main_prod_card">
-                    <img src="../images/gift2.jpg" width="180" height="180">
-                    <div  class="info_container">
-                        <p>2pcs/set Custom name couple Bracelet with artificial rose in a box</p>
-                        <h5>#40,000</h5>
-                        <button><a href="">Buy Now</a></button>
-
-                    </div>
-                </div>
-                <div class="main_prod_card">
-                    <img src="../images/gift2.jpg" width="180" height="180">
-                    <div  class="info_container">
-                        <p>3 in 1 gift Rose teddy, real fresh rose, necklace</p>
-                        <h5>#40,000</h5>
-                        <button><a href="">Buy Now</a></button>
-                    </div>
-                </div>
-                <div class="main_prod_card">
-                    <img src="../images/gift2.jpg" width="180" height="180">
-                    <div  class="info_container">
-                        <p>3 in 1 Male gift, watch bracelet and necklace</p>
-                        <h5>#40,000</h5>
-                        <button>Buy Now</button>
-                    </div>
-                </div>
-                <div class="main_prod_card">
-                    <img src="../images/gift2.jpg" width="180" height="180">
-                    <div  class="info_container">
-                        <p>3D heart shape acrylic bedside lamp</p>
-                        <h5>#40,000</h5>
-                        <button><a href="">Buy Now</a></button>
-
-                    </div>
-                </div>
-                <div class="main_prod_card">
-                    <img src="../images/gift2.jpg" width="180" height="180">
-                    <div class="info_container">
-                        <p>3D I love you rose crystal colorful lamp</p>
-                        <h5>#40,000</h5>
-                        <button><a href="">Buy Now</a></button>
-
-                    </div>
-                </div>
-
+                @endforeach
             </div>
-
-
-
-
-
         </div>
 
 

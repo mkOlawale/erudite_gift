@@ -78,7 +78,7 @@
         <div class="prod_card_container">  
             <img src="../images/gift-box.png" alt="" width="30" height="30">
             <p class="prod_card_container-category">Flowers & Notes</p>
-            <a href="#" class="prod_card_container-title">Click Here</a>
+            <a href="{{ url('us/flower')}}" class="prod_card_container-title">Click Here</a>
 
             
         </div>
@@ -86,13 +86,13 @@
             <img src="../images/gift-box.png" alt="" width="30" height="30">
 
             <p class="prod_card_container-category">Teddy Bears</p>
-            <a href="#" class="prod_card_container-title">Click Here</a>
+            <a href="{{ url('us/teddy')}}" class="prod_card_container-title">Click Here</a>
 
         </div>
         <div class="prod_card_container">
             <img src="../images/gift-box.png" alt="" width="30" height="30">
             <p class="prod_card_container-category">Rings</p>
-           <a href="#" class="prod_card_container-title">Click Here</a>
+           <a href="{{ url('us/rings')}}" class="prod_card_container-title">Click Here</a>
         </div>
         <div class="prod_card_container">
             <img src="../images/gift-box.png" alt="" width="30" height="30">
@@ -102,42 +102,42 @@
         <div class="prod_card_container">
             <img src="../images/gift-box.png" alt="" width="30" height="30">
             <p class="prod_card_container-category">Perfumes</p>
-            <a href="#" class="prod_card_container-title">Click Here</a>
+            <a href="{{ url('us/perfume')}}" class="prod_card_container-title">Click Here</a>
         </div>
         <div class="prod_card_container">
             <img src="../images/gift-box.png" alt="" width="30" height="30">
             <p class="prod_card_container-category">Watches</p>
-            <a href="#" class="prod_card_container-title">Click Here</a>
+            <a href="{{ url('us/watch')}}" class="prod_card_container-title">Click Here</a>
         </div>
         <div class="prod_card_container">
             <img src="../images/gift-box.png" alt="" width="30" height="30">
             <p class="prod_card_container-category">Kids Items</p>
-            <a href="#" class="prod_card_container-title">Click Here</a>
+            <a href="{{ url('us/kids')}}" class="prod_card_container-title">Click Here</a>
         </div>
         <div class="prod_card_container">
             <img src="../images/gift-box.png" alt="" width="30" height="30">
             <p class="prod_card_container-category">Clothing & Accessories</p>
-            <a href="#" class="prod_card_container-title">Click Here</a>
+            <a href="{{ url('us/clothing')}}" class="prod_card_container-title">Click Here</a>
         </div>
         <div class="prod_card_container">
             <img src="../images/gift-box.png" alt="" width="30" height="30">
             <p class="prod_card_container-category">Food</p>
-            <a href="#" class="prod_card_container-title">Click Here</a>
+            <a href="{{ url('us/food')}}" class="prod_card_container-title">Click Here</a>
         </div>
         <div class="prod_card_container">
             <img src="../images/gift-box.png" alt="" width="30" height="30">
             <p class="prod_card_container-category">Adult Items</p>
-            <a href="#" class="prod_card_container-title">Click Here</a>
+            <a href="{{ url('us/adult')}}" class="prod_card_container-title">Click Here</a>
         </div>
         <div class="prod_card_container">
             <img src="../images/gift-box.png" alt="" width="30" height="30">
             <p class="prod_card_container-category">Urgent Deliveries</p>
-            <a href="#" class="prod_card_container-title">Click Here</a>
+            <a href="{{ url('us/urgent')}}" class="prod_card_container-title">Click Here</a>
         </div>
         <div class="prod_card_container">
             <img src="../images/gift-box.png" alt="" width="30" height="30">
             <p class="prod_card_container-category">Footwears</p>
-            <a href="#" class="prod_card_container-title">Click Here</a>
+            <a href="{{ url('us/footwear')}}" class="prod_card_container-title">Click Here</a>
         </div>
 
     </div>
