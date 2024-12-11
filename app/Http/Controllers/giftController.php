@@ -50,6 +50,47 @@ class giftController extends Controller
     public function othersGift(){
         return view('others');
     }
+    public function UsaProductsDetails($id){
+
+        $product = usaproduct::find($id);
+        // $related = usaproduct::paginate(12);
+
+        return view('Us_product.product_details', compact('product'));
+    }
+    public function formUsa($id){
+        $product = usaproduct::find($id);
+
+        return view('Us_product.checkform', compact('product'));
+    }
+    public function formUk($id){
+        $product = ukproduct::find($id);
+
+        return view('Us_product.checkform', compact('product'));
+    }
+    public function UkProductsDetails($id){
+
+        $product = ukproduct::find($id);
+
+        return view('Uk_product.product_details', compact('product'));
+    }
+    public function EuropeProductsDetails($id){
+
+        $product = europeproduct::find($id);
+
+        return view('Us_product.product_details', compact('product'));
+    }
+    public function CanadaProductsDetails($id){
+
+        $product = canadaproduct::find($id);
+
+        return view('Us_product.product_details', compact('product'));
+    }
+    public function AsianProductsDetails($id){
+
+        $product = asianproduct::find($id);
+
+        return view('Us_product.product_details', compact('product'));
+    }
     public function jewelry(){
         $product = usaproduct::where('Category','Necklace&Jewelries')->get();
         return view('Us_product.jewelry', compact('product'));
@@ -306,5 +347,9 @@ class giftController extends Controller
     public function asianWatch(){
         $product = asianproduct::where('Category','Watches')->get();
         return view('asian_product.watch', compact('product'));
+    }
+    public function testPayment(Request $request){
+            dd($request->product_image);
+         
     }
 }

@@ -29,6 +29,7 @@ Route::middleware([
     })->name('dashboard');
 });
 
+Route::post('/test_produ', [giftController::class, 'testPayment']);     
 Route::get('/redirect', [giftController::class, 'redirect']);     
 Route::get('/gift/usa', [giftController::class, 'us_available_gift']);     
 Route::get('/gift/united_kingdom', [giftController::class, 'gift_to_uk']);     
@@ -50,6 +51,8 @@ Route::get('/us/rings', [giftController::class, 'usaRings']);
 Route::get('/us/teddy', [giftController::class, 'usaTeddy']);   
 Route::get('/us/urgent', [giftController::class, 'usaUrgent']);   
 Route::get('/us/watch', [giftController::class, 'usaWatch']);   
+Route::get('/usa_productdetails/{id}', [giftController::class, 'UsaProductsDetails']);   
+Route::get('/buy_usa/{id}', [giftController::class, 'formUsa']);   
 // product single United Kingdom
 Route::get('uk/jewelry', [giftController::class, 'ukjewelry']);   
 Route::get('uk/adult', [giftController::class, 'ukdult']);   
@@ -62,7 +65,11 @@ Route::get('uk/perfume', [giftController::class, 'ukPerfume']);
 Route::get('uk/rings', [giftController::class, 'ukRings']);   
 Route::get('uk/teddy', [giftController::class, 'ukTeddy']);   
 Route::get('uk/urgent', [giftController::class, 'ukUrgent']);   
-Route::get('uk/watch', [giftController::class, 'ukWatch']);   
+Route::get('uk/watch', [giftController::class, 'ukWatch']);  
+Route::get('/uk_productdetails/{id}', [giftController::class, 'UkProductsDetails']); 
+Route::get('/buy_uk/{id}', [giftController::class, 'formUk']);   
+  
+
 // product single Canada
 Route::get('canada/jewelry', [giftController::class, 'canadajewelry']);   
 Route::get('canada/adult', [giftController::class, 'canadadult']);   

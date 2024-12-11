@@ -14,14 +14,14 @@
     </div>
     <div class="prod_whole_container">
         <div class="second_flexible_container">
-            <!-- <h1>hello world</h1> -->
-
             <div class="main_prod_cobtainer">
                 @foreach($product as $prod)
                 <div class="main_prod_card">
                     <img src="/product/{{ $prod->image }}" width="180" height="180">
                     <div  class="info_container">
-                        <p>{{ $prod->title}}</p>
+                        <p>
+                            <a href="{{ url('/usa_productdetails', $prod->id) }}" style="color: black;"> {{ $prod->title}} </a>
+                        </p>
                         <h5>#{{ $prod->price}}</h5>
                         <button><a href="">Buy Now</a></button>
                     </div>

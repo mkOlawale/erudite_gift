@@ -86,58 +86,58 @@
             <img src="../images/gift-box.png" alt="" width="30" height="30">
 
             <p class="prod_card_container-category">Teddy Bears</p>
-            <a href="{{ url('uk/flower')}}" class="prod_card_container-title">Click Here</a>
+            <a href="{{ url('uk/teddy')}}" class="prod_card_container-title">Click Here</a>
 
         </div>
         <div class="prod_card_container">
             <img src="../images/gift-box.png" alt="" width="30" height="30">
             <p class="prod_card_container-category">Rings</p>
-           <a href="{{ url('uk/flower')}}" class="prod_card_container-title">Click Here</a>
+           <a href="{{ url('uk/rings')}}" class="prod_card_container-title">Click Here</a>
         </div>
         <div class="prod_card_container">
             <img src="../images/gift-box.png" alt="" width="30" height="30">
             <p class="prod_card_container-category">Necklace & Jewelries</p>
-            <a href="{{ url('uk/flower')}}" class="prod_card_container-title">Click Here</a>
+            <a href="{{ url('uk/jewelry')}}" class="prod_card_container-title">Click Here</a>
         </div>
         <div class="prod_card_container">
             <img src="../images/gift-box.png" alt="" width="30" height="30">
             <p class="prod_card_container-category">Perfumes</p>
-            <a href="{{ url('uk/flower')}}" class="prod_card_container-title">Click Here</a>
+            <a href="{{ url('uk/perfume')}}" class="prod_card_container-title">Click Here</a>
         </div>
         <div class="prod_card_container">
             <img src="../images/gift-box.png" alt="" width="30" height="30">
             <p class="prod_card_container-category">Watches</p>
-            <a href="{{ url('uk/flower')}}" class="prod_card_container-title">Click Here</a>
+            <a href="{{ url('uk/watch')}}" class="prod_card_container-title">Click Here</a>
         </div>
         <div class="prod_card_container">
             <img src="../images/gift-box.png" alt="" width="30" height="30">
             <p class="prod_card_container-category">Kids Items</p>
-            <a href="{{ url('uk/flower')}}" class="prod_card_container-title">Click Here</a>
+            <a href="{{ url('uk/kids')}}" class="prod_card_container-title">Click Here</a>
         </div>
         <div class="prod_card_container">
             <img src="../images/gift-box.png" alt="" width="30" height="30">
             <p class="prod_card_container-category">Clothing & Accessories</p>
-            <a href="{{ url('uk/flower')}}" class="prod_card_container-title">Click Here</a>
+            <a href="{{ url('uk/clothing')}}" class="prod_card_container-title">Click Here</a>
         </div>
         <div class="prod_card_container">
             <img src="../images/gift-box.png" alt="" width="30" height="30">
             <p class="prod_card_container-category">Food</p>
-            <a href="{{ url('uk/flower')}}" class="prod_card_container-title">Click Here</a>
+            <a href="{{ url('uk/food')}}" class="prod_card_container-title">Click Here</a>
         </div>
         <div class="prod_card_container">
             <img src="../images/gift-box.png" alt="" width="30" height="30">
             <p class="prod_card_container-category">Adult Items</p>
-            <a href="{{ url('uk/flower')}}" class="prod_card_container-title">Click Here</a>
+            <a href="{{ url('uk/adult')}}" class="prod_card_container-title">Click Here</a>
         </div>
         <div class="prod_card_container">
             <img src="../images/gift-box.png" alt="" width="30" height="30">
             <p class="prod_card_container-category">Urgent Deliveries</p>
-            <a href="{{ url('uk/flower')}}" class="prod_card_container-title">Click Here</a>
+            <a href="{{ url('uk/urgent')}}" class="prod_card_container-title">Click Here</a>
         </div>
         <div class="prod_card_container">
             <img src="../images/gift-box.png" alt="" width="30" height="30">
             <p class="prod_card_container-category">Footwears</p>
-            <a href="{{ url('uk/flower')}}" class="prod_card_container-title">Click Here</a>
+            <a href="{{ url('uk/footwear')}}" class="prod_card_container-title">Click Here</a>
         </div>
 
     </div>
