@@ -21,10 +21,12 @@
                 <div class="main_prod_card">
                     <img src="/product/{{ $prod->image }}" width="180" height="180">
                     <div  class="info_container">
-                        <p>{{ $prod->title}}</p>
+                        <p>
+                            <a href="{{ url('/europe_productdetails', $prod->id) }}" style="color: black;"> {{ $prod->title}} </a>
+                        </p>
                         <h5>#{{ $prod->price}}</h5>
-                        <button><a href="">Buy Now</a></button>
-                    </div>
+                        <button><a href="{{ url('/buy_europe', $prod->id) }}">Buy Now</a></button>
+                    </div> 
                 </div>
                 @endforeach
             </div>

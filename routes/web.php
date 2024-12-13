@@ -96,6 +96,9 @@ Route::get('europe/rings', [giftController::class, 'europeRings']);
 Route::get('europe/teddy', [giftController::class, 'europeTeddy']);   
 Route::get('europe/urgent', [giftController::class, 'europeUrgent']);   
 Route::get('europe/watch', [giftController::class, 'europeWatch']);   
+Route::get('/europe_productdetails/{id}', [giftController::class, 'EuropeProductsDetails']);
+Route::get('/buy_europe/{id}', [giftController::class, 'formEurope']);   
+
 // product single Asian
 Route::get('asian/jewelry', [giftController::class, 'asianjewelry']);   
 Route::get('asian/adult', [giftController::class, 'asiandult']);   
