@@ -52,10 +52,10 @@ class giftController extends Controller
     }
     public function UsaProductsDetails($id){
 
-        $product = usaproduct::find($id);
+        $prod = usaproduct::find($id);
         // $related = usaproduct::paginate(12);
 
-        return view('Us_product.product_details', compact('product'));
+        return view('Us_product.product_details', compact('prod'));
     }
     public function formUsa($id){
         $product = usaproduct::find($id);
@@ -69,9 +69,9 @@ class giftController extends Controller
     }
     public function UkProductsDetails($id){
 
-        $product = ukproduct::find($id);
+        $prod = ukproduct::find($id);
 
-        return view('Uk_product.product_details', compact('product'));
+        return view('Uk_product.product_details', compact('prod'));
     }
     public function EuropeProductsDetails($id){
 

@@ -23,7 +23,7 @@
                     <div  class="info_container">
                         <p>{{ $prod->title}}</p>
                         <h5>#{{ $prod->price}}</h5>
-                        <button><a href="">Buy Now</a></button>
+                        <button><a href="{{ url('/buy_usa', $prod->id) }}">Buy Now</a></button>
                     </div>
                 </div>
                 @endforeach

@@ -23,7 +23,7 @@
                             <a href="{{ url('/usa_productdetails', $prod->id) }}" style="color: black;"> {{ $prod->title}} </a>
                         </p>
                         <h5>#{{ $prod->price}}</h5>
-                        <button><a href="">Buy Now</a></button>
+                        <button><a href="{{ url('/buy_usa', $prod->id) }}">Buy Now</a></button>
                     </div>
                 </div>
                 @endforeach

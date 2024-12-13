@@ -26,7 +26,7 @@
 
                         </p>
                         <h5>#{{ $prod->price}}</h5>
-                        <button><a href="">Buy Now</a></button>
+                        <button><a href="{{ url('/buy_uk', $product->id) }}">Buy Now</a></button>
                     </div>
                 </div>
                 @endforeach

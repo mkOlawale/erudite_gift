@@ -99,20 +99,20 @@
 <body>
     <div class="sinle_prod_container">
         <div>
-            <img src="/product/{{ $product->image }}" style="max-height: 500px;" alt="">
+            <img src="/product/{{ $prod->image }}" style="max-height: 500px;" alt="">
         </div>
         <div class="single_title_container">
-            <h2>{{$product->title}}</h2>
-            <h4>#{{ $product->price}}</h4>
+            <h2>{{$prod->title}}</h2>
+            <h4>#{{ $prod->price}}</h4>
             <!-- <br> -->
-            <button><a href="{{ url('/buy_usa', $product->id) }}">Buy Now</a></button>
+            <button><a href="{{ url('/buy_usa', $prod->id) }}">Buy Now</a></button>
             <br>
             <h5>visa img here</h5>
         </div>
     </div>
     <div class="single_description">
         <h2>Description</h2>
-        <h3>{{ $product->Description}}</h3>
+        <h3>{{ $prod->Description}}</h3>
     </div>
     {{-- <h1>Related Products</h1>
     <div class="single_related_prod">
