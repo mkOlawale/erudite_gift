@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\giftController;
 use App\Http\Controllers\adminController;
+use App\Http\Controllers\PaymentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -147,4 +148,4 @@ Route::post('/addcanada_products', [adminController::class, 'postCanadaprod']);
 Route::post('/addeurope_products', [adminController::class, 'postEuropeprod']);   
 
 // payments
-Route::post('/pay/{id}', [PaymentController::class, 'redirectToGateway'])->name('pay');
+Route::post('/pay', [PaymentController::class, 'redirectToGateway'])->name('pay');

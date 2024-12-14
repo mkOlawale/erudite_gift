@@ -119,8 +119,10 @@
     <div class="whole_form_container"> <br><br>
         <div class="prod_name">
             <h1>“{{ $product->title}}” has been added to your cart.</h1>
+            <h1>{{ $product->price }}</h1>
         </div>
-        <form class="payment_whole_container"  accept-charset="UTF-8" class="form-horizontal" role="form">
+        <form class="payment_whole_container"  method="POST" action="{{ route('pay') }}" accept-charset="UTF-8" class="form-horizontal" role="form">
+            @csrf
             <section class="form_main">
                 <div class="file-input-wrapper">
                     <label for="file-upload" class="custom-file-label">Click Choose a file</label>
@@ -129,7 +131,8 @@
             <div class="flex_input">
                 <div>
                      <label for="Reciever">Reciever First Name</label>
-                <input type="text" name="fname" id="fname" placeholder="Enter Reciever's first name">
+                <input type="text" name="Rname" id="fname" placeholder="Enter Reciever's first name">
+                <input type="hidden" name="title" id="title" value="{{ $product->title }}">
                 </div>
                 <div style="margin-left: 10px;">
                      <label for="Reciever">Reciever Others Name</label>
@@ -144,7 +147,7 @@
 
             <div>
                 <label for="snumber">Country or Region *</label>
-                <select name="Category" class="input_color" required>
+                <select name="Country" class="input_color" >
                     <option value="" selected="">Select a Country</option>
                     <option value="us">United State</option>
                     <option value="uk">United Kingdom</option>
@@ -157,23 +160,23 @@
 
             <div>
                 <label for="snumber">State *</label>
-                <input type="text" name="Raddress" placeholder="Enter the state which you are sending gift"> 
+                <input type="text" name="state" placeholder="Enter the state which you are sending gift" > 
             </div>
             <div>
                 <label for="snumber">Street address * *</label>
-                <input type="text" name="Raddress" placeholder="Enter the reciever address here"> 
+                <input  type="text" name="address" placeholder="Enter the reciever address here"> 
             </div>
             <div>
                 <label for="scity">City</label>
-                <input type="text" name="city"> 
+                <input type="text" name="city" > 
             </div>
             <div>
-                <label for="snumber">Zip Code</label>
-                <input type="text" name="city"> 
+                <label for="snumber">Your email</label>
+                <input type="email" name="email" > 
             </div>
             <div>
                 <label for="snumber">Enter Recievers phone Number (optional) </label>
-                <input type="text" name="city" placeholder="Enter own email address here"> 
+                <input type="text" name="r_number" placeholder="Enter own email address here"> 
             </div>
             <div>
                 <label for="snumber">Additional Information (optional) </label>
@@ -183,18 +186,13 @@
 
         <div class="s_payment_container">
             {{-- hidden  important input --}}
-            <input type="hidden" name="email" value="otemuyiwa@gmail.com"> {{-- required --}}
+            {{-- <input type="hidden" name="email" value=""> required --}}
             <input type="hidden" name="orderID" value="345">
-            <input type="hidden" name="amount" value="{{ $product->price ?? '' }}"> {{-- required in kobo --}}
-            <input type="hidden" name="quantity" value="1">
+            <input type="hidden" name="amount" :value="{{ $product->price }}"> {{-- required in kobo --}}
+            <input type="hidden" name="quantity" value="3">
             <input type="hidden" name="currency" value="NGN">
             <input type="hidden" name="metadata" value="{{ json_encode($array = ['key_name' => 'value',]) }}" > {{-- For other necessary things you want to add to your payload. it is optional though --}}
-            {{-- <input type="hidden" name="reference" value="{{ Paystack::genTranxRef() }}"> required --}}
-            
-            {{ csrf_field() }} {{-- works only when using laravel 5.1, 5.2 --}}
-
-            <input type="hidden" name="_token" value="{{ csrf_token() }}"> {{-- employ this in place of csrf_field only in laravel 5.0 --}}
-
+            <input type="hidden" name="reference" value="{{ Paystack::genTranxRef() }}"> {{-- required --}}
             <h3>Product</h3>
             <div class="prod_name">
                 <h1>“{{ $product->title}}" has been added to your cart.</h1>
