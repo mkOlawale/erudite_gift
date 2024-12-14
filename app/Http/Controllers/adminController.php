@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\usaproduct;
 use App\Models\ukproduct;
-use App\Models\otherproduct;
+use App\Models\asianproducts;
 use App\Models\canadaproduct;
 use App\Models\europeproduct;
 
@@ -24,8 +24,8 @@ class adminController extends Controller
     public function addEuropeProduct(){
         return view('admin.addeuropeproduct');
     }
-    public function addOtherProduct(){
-        return view('admin.othersproduct');
+    public function addAsianProduct(){
+        return view('admin.addAsianproduct');
     }
     public function postusaprod(Request $request){
         $product = new usaproduct;
@@ -120,29 +120,6 @@ class adminController extends Controller
 
         return redirect()->back()->with('message', 'Product updated succesfully');
     }
-    public function postOtherprod(Request $request){
-        $product = new otherproduct;
-
-        $product->title = $request->title;
-
-        $product->Description = $request->Description;
-
-        $product->Category = $request->Category;
-
-        $product->price = $request->price;
-
-        $image = $request->image;
-
-        $image_name = time().'.'.$image->getClientOriginalExtension();
-
-        $request->image->move('product', $image_name);
-
-        $product->image = $image_name;
-
-        $product->save();
-
-        return redirect()->back()->with('message', 'Product is being added succesfully, No stress! shogbo omo iya mi!!');
-    }
     public function postCanadaprod(Request $request){
         $product = new canadaproduct;
 
@@ -226,6 +203,53 @@ class adminController extends Controller
     public function updateEuropeProducts(Request $request, $id){
 
         $product = ukproduct::find($id);
+
+        $product->title = $request->title;
+
+        $product->price = $request->price;
+
+        $product->save();
+
+        return redirect()->back()->with('message', 'Product updated succesfully');
+    }
+    // asian products
+    public function postAsianprod(Request $request){
+        $product = new asianproducts;
+
+        $product->title = $request->title;
+
+        $product->Description = $request->Description;
+
+        $product->Category = $request->Category;
+
+        $product->price = $request->price;
+
+        $image = $request->image;
+
+        $image_name = time().'.'.$image->getClientOriginalExtension();
+
+        $request->image->move('product', $image_name);
+
+        $product->image = $image_name;
+
+        $product->save();
+
+        return redirect()->back()->with('message', 'Product is being added succesfully, No stress! shogbo omo iya mi!!');
+    }
+    public function showAsianProduct(){
+        $product = asianproducts::all();
+
+        return view('admin.showasian', compact('product'));
+    }
+    public function editAsianProduct($id){
+
+        $product = asianproducts::find($id);
+        
+        return view('admin.updateasian', compact('product'));
+    }
+    public function updateAsianProduct(Request $request, $id){
+
+        $product = asianproducts::find($id);
 
         $product->title = $request->title;
 

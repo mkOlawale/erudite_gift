@@ -10,7 +10,7 @@ use App\Models\ukproduct;
 use App\Models\otherproduct;
 use App\Models\canadaproduct;
 use App\Models\europeproduct;
-use App\Models\asianproduct;
+use App\Models\asianproducts;
 
 
 class giftController extends Controller
@@ -25,7 +25,6 @@ class giftController extends Controller
         {
          return view('welcome');
         }
-
     }
     public function logout(Request $request){
         $user = Auth::User();
@@ -60,12 +59,27 @@ class giftController extends Controller
     public function formUsa($id){
         $product = usaproduct::find($id);
 
-        return view('Us_product.checkform', compact('product'));
+        return view('paystack', compact('product'));
     }
     public function formUk($id){
         $product = ukproduct::find($id);
 
-        return view('Us_product.checkform', compact('product'));
+        return view('paystack', compact('product'));
+    }
+    public function formEurope($id){
+        $product = europeproduct::find($id);
+
+        return view('paystack', compact('product'));
+    }
+    public function formCanada($id){
+        $product = canadaproduct::find($id);
+
+        return view('paystack', compact('product'));
+    }
+    public function formAsian($id){
+        $product = asianproduct::find($id);
+
+        return view('paystack', compact('product'));
     }
     public function UkProductsDetails($id){
 
@@ -75,21 +89,21 @@ class giftController extends Controller
     }
     public function EuropeProductsDetails($id){
 
-        $product = europeproduct::find($id);
+        $prod = europeproduct::find($id);
 
-        return view('Us_product.product_details', compact('product'));
+        return view('Europe_product.product_details', compact('prod'));
     }
     public function CanadaProductsDetails($id){
 
-        $product = canadaproduct::find($id);
+        $prod = canadaproduct::find($id);
 
-        return view('Us_product.product_details', compact('product'));
+        return view('Us_product.product_details', compact('prod'));
     }
     public function AsianProductsDetails($id){
 
-        $product = asianproduct::find($id);
+        $prod = asianproduct::find($id);
 
-        return view('Us_product.product_details', compact('product'));
+        return view('Us_product.product_details', compact('prod'));
     }
     public function jewelry(){
         $product = usaproduct::where('Category','Necklace&Jewelries')->get();
@@ -301,51 +315,51 @@ class giftController extends Controller
 
     // Asian product single
     public function asianjewelry(){
-        $product = asianproduct::where('Category','Necklace&Jewelries')->get();
+        $product = asianproducts::where('Category','Necklace&Jewelries')->get();
         return view('asian_product.jewelry', compact('product'));
     }
     public function asiandult(){
-        $product = asianproduct::where('Category','Adult Items')->get();
+        $product = asianproducts::where('Category','Adult Items')->get();
         return view('asian_product.adult', compact('product'));
     }
     public function asianclothing(){
-        $product = asianproduct::where('Category','Clothing&Accessories')->get();
+        $product = asianproducts::where('Category','Clothing&Accessories')->get();
         return view('asian_product.clothing', compact('product'));
     }
     public function asianFlower(){
-        $product = asianproduct::where('Category','Flowers&Notes')->get();
+        $product = asianproducts::where('Category','Flowers&Notes')->get();
         return view('asian_product.flowers', compact('product'));
     }
     public function asianFood(){
-        $product = asianproduct::where('Category','Food')->get();
+        $product = asianproducts::where('Category','Food')->get();
         return view('asian_product.food', compact('product'));
     }
     public function asianFootwear(){
-        $product = asianproduct::where('Category','Footwears')->get();
+        $product = asianproducts::where('Category','Footwears')->get();
         return view('asian_product.footwear', compact('product'));
     }
     public function asianKids(){
-        $product = asianproduct::where('Category','KidsItems')->get();
+        $product = asianproducts::where('Category','KidsItems')->get();
         return view('asian_product.kids', compact('product'));
     }
     public function asianPerfume(){
-        $product = asianproduct::where('Category','Perfumes')->get();
+        $product = asianproducts::where('Category','Perfumes')->get();
         return view('asian_product.perfume', compact('product'));
     }
     public function asianRings(){
-        $product = asianproduct::where('Category','Rings')->get();
+        $product = asianproducts::where('Category','Rings')->get();
         return view('asian_product.rings', compact('product'));
     }
     public function asianTeddy(){
-        $product = asianproduct::where('Category','TeddyBears')->get();
+        $product = asianproducts::where('Category','TeddyBears')->get();
         return view('asian_product.teddy', compact('product'));
     }
     public function asianUrgent(){
-        $product = asianproduct::where('Category','Urgent Deliveries')->get();
+        $product = asianproducts::where('Category','Urgent Deliveries')->get();
         return view('asian_product.urgent', compact('product'));
     }
     public function asianWatch(){
-        $product = asianproduct::where('Category','Watches')->get();
+        $product = asianproducts::where('Category','Watches')->get();
         return view('asian_product.watch', compact('product'));
     }
     public function testPayment(Request $request){

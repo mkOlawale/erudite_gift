@@ -2,10 +2,9 @@
 <html lang="en">
   <head>
     <!-- Required meta tags -->
-    <base href="/admin">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Cybershopping Admin</title>
+    <title>EruditeGift Admin Others</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
@@ -41,15 +40,6 @@
           display: inline-block;
           width: 200px;
         }
-        .bread{
-          margin: 10px;
-          border: none;
-          outline: none;
-        }
-        .latest_bread_crum{
-          padding: 200px;
-          border-radius: 10px;
-        }
     </style>
   </head>
   <body>
@@ -70,42 +60,30 @@
             </div>
             @endif
           <div class="div_center">
-            <h1 class="txt-font">Update Products from here</h1>
+            <h1 class="txt-font">Add Asian Products</h1>
 
-          <form action="{{ url('/update_products', $product->id) }}" method="POST" enctype="multipart/form-data">
+          <form action="{{ url('/addasianproduct') }}" method="POST" enctype="multipart/form-data">
             @csrf
           <div class="input_container">
             <label for="Title">Title</label>
-            <input type="text" name="title" placeholder="Enter the title" class="input_color" required value="{{$product->title}}">
+            <input type="text" name="title" placeholder="Enter the title" class="input_color" required>
           </div>
           <div class="input_container">
             <label for="Description">Product Description</label>
-            <input type="text" name="Description" placeholder="Write Description" class="input_color" required value="{{$product->Description}}">
+            <input type="text" name="Description" placeholder="Write Description" class="input_color" required>
           </div>
-          <div class="input_container">
-            <label for="Quality">Product Quantity</label>
-            <input type="number" name="Quality" placeholder="Quantity" class="input_color" required value="{{$product->Quantity}}">
-          </div>
+         
           <div class="input_container">
             <label for="Price">Product Price</label>
-            <input type="number" name="price" placeholder="Product price" class="input_color" required value="{{$product->price}}">
+            <input type="number" name="price" placeholder="Product price" class="input_color" required>
           </div>
-          <div class="input_container">
-            <label for="Discount_price">Discount Price</label>
-            <input type="number" name="Discount_price" placeholder="Discount Price" class="input_color" value="{{$product->Discount_price}}">
-          </div>
+         
           <div class="input_container">
             <label for="category">Product Category</label>
                 <select name="Category" class="input_color" required>
-                  <option value="{{$product->Category}}" selected="">{{$product->Category}}</option>
-                  @foreach($category as $cat)
-                  <option value="{{$cat->category_name}}">{{$cat->category_name}}</option>
-                  @endforeach
+                  <option value="" selected="">Select a Category</option>
+                 
                 </select>
-          </div>
-          <div class="input_container">
-            <label for="image">Current Image</label>
-           <image src="/product/{{$product->image}}" style="max-height: 100px; max-width: 100px; margin: 0 auto;">
           </div>
           <div class="input_container">
             <label for="image">Product Image</label>

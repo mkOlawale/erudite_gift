@@ -2,9 +2,10 @@
 <html lang="en">
   <head>
     <!-- Required meta tags -->
+    <base href="/admin">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>EruditeGift Admin Others</title>
+    <title>Cybershopping Admin</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
@@ -40,6 +41,15 @@
           display: inline-block;
           width: 200px;
         }
+        .bread{
+          margin: 10px;
+          border: none;
+          outline: none;
+        }
+        .latest_bread_crum{
+          padding: 200px;
+          border-radius: 10px;
+        }
     </style>
   </head>
   <body>
@@ -60,34 +70,17 @@
             </div>
             @endif
           <div class="div_center">
-            <h1 class="txt-font">Add Others Products</h1>
+            <h1 class="txt-font">Update Asian Products from here</h1>
 
-          <form action="{{ url('/other_products') }}" method="POST" enctype="multipart/form-data">
+          <form action="{{ url('/updateasian_products', $product->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
           <div class="input_container">
             <label for="Title">Title</label>
-            <input type="text" name="title" placeholder="Enter the title" class="input_color" required>
+            <input type="text" name="title" placeholder="Enter the title" class="input_color" required value="{{$product->title}}">
           </div>
-          <div class="input_container">
-            <label for="Description">Product Description</label>
-            <input type="text" name="Description" placeholder="Write Description" class="input_color" required>
-          </div>
-         
           <div class="input_container">
             <label for="Price">Product Price</label>
-            <input type="number" name="price" placeholder="Product price" class="input_color" required>
-          </div>
-         
-          <div class="input_container">
-            <label for="category">Product Category</label>
-                <select name="Category" class="input_color" required>
-                  <option value="" selected="">Select a Category</option>
-                 
-                </select>
-          </div>
-          <div class="input_container">
-            <label for="image">Product Image</label>
-            <input type="file" name="image">
+            <input type="number" name="price" placeholder="Product price" class="input_color" required value="{{$product->price}}">
           </div>
           <div class="input_container">
             <input type="submit" class="btn btn-success" value="Add Product">

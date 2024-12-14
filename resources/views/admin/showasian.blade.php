@@ -61,20 +61,29 @@
             </div>
             @endif
 
-        <h1 class="txt_h2">All Products</h1>
+        <h1 class="txt_h2">All USA Products</h1>
         <table class="table_container">
             <tr class="header_container">
                 <th>Product title</th>
-                <th>Description</th>
-                <th>Product Quality</th>
                 <th>Product Category</th>
                 <th>Product price</th>
-                <th>Discount_price</th>
-                <th>Product image</th>
                 <th>Edit</th>
                 <th> Delete </th>
             </tr>
-           
+            @foreach($product as $prod)
+            <tr>
+                <td>{{ $prod->title }}</td>
+                <td>{{ $prod->Category }}</td>
+                <td>{{ $prod->price }}</td>
+                <td>
+                    <a class="btn btn-success" href="{{ url('editasian_products', $prod->id) }}">Edit</a>
+                </td>
+                <td>
+                    <a class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this product')" 
+                    href="{{ url('delete_product', $prod->id) }}">Delete</a>
+                </td>
+            </tr>
+            @endforeach
         </table>
           </div>
         </div>

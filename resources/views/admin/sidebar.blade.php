@@ -82,8 +82,8 @@
                 <li class="nav-item"> <a class="nav-link" href="{{ url('/showcanada_products') }}">Show Canada Products</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{ url('/europe_products') }}">Europe Products</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{ url('/showeurope_products') }}">Show Europe Products</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{ url('/others_products') }}">Others Products</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{ url('show_product') }}">Show Products</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ url('/asianproduct') }}">Asian Products</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ url('showasianproduct') }}">Show Asian Product</a></li>
               </ul>
             </div>
           </li>
