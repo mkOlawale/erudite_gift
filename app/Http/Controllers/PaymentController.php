@@ -18,25 +18,6 @@ class PaymentController extends Controller
      */
     public function redirectToGateway(Request $request)
     {
-        $request->validate([
-            'email' => 'required|email',
-            'amount' => 'required',
-        ]);
-        $data = array(
-            "email" => $request->email,
-            "amount" => $request->amount * 100,
-            'metadata' => [
-                'title' => $request->title,
-                'first_name' => $request->Rname,
-                'last_name' => $request->lname,
-                'country' => $request->country,
-                'state' => $request->state,
-                'state' => $request->city,
-                'address' => $request->address,
-                'Reciever_number' => $request->r_number,
-                'notes' => $request->notes,
-            ],
-        );
         try{
             return Paystack::getAuthorizationUrl()->redirectNow();
         }catch(\Exception $e) {

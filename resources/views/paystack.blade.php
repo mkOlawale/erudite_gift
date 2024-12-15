@@ -188,7 +188,7 @@
             {{-- hidden  important input --}}
             {{-- <input type="hidden" name="email" value=""> required --}}
             <input type="hidden" name="orderID" value="345">
-            <input type="hidden" name="amount" :value="{{ $product->price }}"> {{-- required in kobo --}}
+            <input type="hidden" name="amount" value="800"> {{-- required in kobo --}}
             <input type="hidden" name="quantity" value="3">
             <input type="hidden" name="currency" value="NGN">
             <input type="hidden" name="metadata" value="{{ json_encode($array = ['key_name' => 'value',]) }}" > {{-- For other necessary things you want to add to your payload. it is optional though --}}
