@@ -28,7 +28,7 @@ class PaymentController extends Controller
             $data = [
                 'email' => $request->email,
                 'amount' => $request->amount * 100, // Convert to kobo
-                "currency" => "NGN"
+                "currency" => "NGN",
                 'metadata' => [
                     'title' => $request->title,
                     'first_name' => $request->Rname,
