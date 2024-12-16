@@ -58,8 +58,8 @@ class giftController extends Controller
     }
     public function formUsa($id){
         $product = usaproduct::find($id);
-
-        return view('paystack', compact('product'));
+        $email = 'abeebolaking1@gmail.com';
+        return view('paystack', compact('product', 'email'));
     }
     public function formUk($id){
         $product = ukproduct::find($id);
