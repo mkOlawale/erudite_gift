@@ -82,21 +82,62 @@
 
           <table>
             <tr>
-                <th class="th_header">Name</th>
+                <th class="th_header">F Name</th>
+                <th class="th_header">L Name</th>
                 <th class="th_header">Email</th>
                 <th class="th_header">Phone</th>
                 <th class="th_header">Address</th>
                 <th class="th_header">title</th>
                 <th class="th_header">price</th>
-                <th class="th_header">Quantity</th>
-                <th class="th_header">payment_status</th>
-                <th class="th_header">delivery_status</th>
-                <th class="th_header">Image</th>
+                <th class="th_header">Country</th>
+                <th class="th_header">State</th>
+                <th class="th_header">Additional image</th>
+                <th class="th_header">Payment</th>
+                <th class="th_header">city</th>
+                <th class="th_header">notes</th>
                 <th class="th_header">Delievered</th>
-                <th class="th_header">PDF</th>
                 <th class="th_header">send email</th>
             </tr>
+            @forelse($orders as $order)
+            <tr>
+                <td>{{$order->first_name}}</td>
+                <td>{{$order->last_name}}</td>
+                <td>{{$order->email}}</td>
+                <td>{{$order->snumber}}</td>
+                <td>{{$order->phone}}</td>
+                <td>{{$order->address}}</td>
+                <td>{{$order->title}}</td>
+                <td>#{{$order->price}}</td>
+                <td>{{$order->country}}</td>
+                <td>{{$order->state}}</td>
+                <td>
+                  <image src="/product/{{$order->image}}" />
+                  </td>
+                <td>{{$order->status}}</td>
+                <td>{{$order->city}}</td>
+                <td>{{$order->notes}}</td>
+                <td>{{$order->delivery_status}}</td>
+             
+                <td>
+                  @if($order->delivery_status == 'Processing')
+                  <a href="{{ url('delivered', $order->id) }}" class="btn btn-primary" onclick="return confirm('Are you sure this product has been delivered')">Delivered</a>
+                  @else
+                  <p class="txt_green">Delievered</p>
+                  @endif
+                </td>
+                <td>
+                  <a href="{{ url('send_email', $order->id) }}" class="btn btn-secondary">send email</a>
+                </td>
+            </tr>
+            @empty
+
+            <tr>
+              <td rowspan="1">No data found</td>
+            </tr>
+
+            @endforelse
           </table>
+         
           </div>
         </div>
 

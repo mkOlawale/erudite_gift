@@ -11,6 +11,13 @@
   .some{
     background: url('../images/');
   }
+  header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999;
+  }
   /* Navbar Styling */
   .navbar {
     background-color: blue;
@@ -109,24 +116,7 @@
     width: 45px;
     height: 45px;
   }
-  .authentication_button > a{
-      color: white;
-      text-decoration: none;
-      padding: 10px;
-      border-radius: 10px;
-      transition: ease-in-out 0.5s;
-  }
-  .authentication_button > a:nth-child(2){
-      /* color: yellow; */
-      text-decoration: none;
-      background: black;
-  }
-  .authentication_button > a:hover{
-    color: white;
-    background: rgba(238, 238, 16, 0.64);
-    text-decoration: none;
-    /* font-weight: bold; */
-}
+  
   /* Mobile Menu */
   .hamburger-menu {
     display: none;
@@ -166,6 +156,17 @@
   
   .mobile-menu a:hover {
     background-color: #555;
+  }
+  .hamburger-menu.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  
+  .hamburger-menu.active span:nth-child(2) {
+    opacity: 0; /* Hide the middle line */
+  }
+  
+  .hamburger-menu.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
   }
   /* slider animation starts from here */
   .slider-container {
@@ -256,16 +257,64 @@
   .footer_contain{
     background-color: blue;
     color: white;
-    padding: 20px;
+    padding: 30px 30px;
     text-align: center;
   }
+ .enquiry_container h3{
+    padding: 20px 5px;
+  }
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+}
 
+/* Login Button Style */
+.btn-login {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    border: 2px solid #4CAF50;
+}
+
+.btn-login:hover {
+    background-color: white;
+    color: #4CAF50;
+    border: 2px solid #4CAF50;
+    transform: scale(1.05);
+}
+
+/* Register Button Style */
+.btn-register {
+    background-color: #2196F3; /* Blue */
+    color: white;
+    border: 2px solid #2196F3;
+}
+
+.btn-register:hover {
+    background-color: white;
+    color: #2196F3;
+    border: 2px solid #2196F3;
+    transform: scale(1.05);
+}
+
+/* Container for Buttons */
+.authentication_button {
+    display: flex;
+    gap: 15px; /* Space between buttons */
+    justify-content: center; /* Center align */
+    /* margin-top: 20px; */
+}
 
 
   .flexible_contain_{
     display: grid;
     grid-template-columns: auto auto auto;
-    padding: 20px;
+    padding: 20px 10px;
   }
   /****  country section ends here ****/
   /* feed */
@@ -486,6 +535,46 @@
     font-weight: bold;
     text-decoration: underline;
 }
+.whatsapp-support {
+  position: fixed;
+  bottom: 20px; /* Adjust the vertical position */
+  right: 20px; /* Adjust the horizontal position */
+  z-index: 1000; /* Ensure it stays above most elements */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background-color: #25d366; /* WhatsApp green color */
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+.auth_container{
+  display: flex;
+  padding: 10px;
+  gap: 15px; /* Space between buttons */
+
+}
+.whatsapp-support img {
+  width: 35px;
+  height: 35px;
+}
+
+.whatsapp-support:hover {
+  transform: scale(1.1); /* Slight zoom effect on hover */
+}
+.whatsapp-tooltip {
+  position: absolute;
+  background-color: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  white-space: nowrap;
+  z-index: 1001;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
   /* each product page styling ends here */
   /* all Responsive Styling */
   @media (max-width: 768px) {
@@ -520,6 +609,9 @@
   border-bottom: 2px solid grey;
   padding: 25px;
 
+}
+.mg_t{
+  margin-top: -150px;
 }
 .prod_feed_container{
     display: flex!important;
@@ -595,6 +687,16 @@
   }
   .advert_sec{
     margin-top: -250px;
+  }
+  .flexible_contain_{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* padding: 15px 20px; */
+  }
+  .flexible_contain_ img{
+    
   }
   }
   /* all responsive styling ends here */

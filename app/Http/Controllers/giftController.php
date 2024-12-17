@@ -26,9 +26,14 @@ class giftController extends Controller
          return view('welcome');
         }
     }
-    public function logout(Request $request){
-        $user = Auth::User();
-       $user->logout();
+    public function logout(Request $request)
+    {
+        Auth::logout(); // Log out the authenticated user
+    
+        $request->session()->invalidate(); // Invalidate the session
+        $request->session()->regenerateToken(); // Regenerate CSRF token
+    
+        return redirect('/'); // Redirect to homepage or login page
     }
 
     public function us_available_gift(){

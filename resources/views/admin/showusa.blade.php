@@ -80,7 +80,7 @@
                 </td>
                 <td>
                     <a class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this product')" 
-                    href="{{ url('delete_product', $prod->id) }}">Delete</a>
+                    href="{{ url('deleteusa_product', $prod->id) }}">Delete</a>
                 </td>
             </tr>
             @endforeach

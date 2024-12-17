@@ -117,6 +117,7 @@ Route::get('asian/urgent', [giftController::class, 'asianUrgent']);
 Route::get('asian/watch', [giftController::class, 'asianWatch']);   
 Route::get('/asian_productdetails/{id}', [giftController::class, 'AsianProductsDetails']);
 Route::get('/buy_asian/{id}', [giftController::class, 'formAsian']);   
+Route::post('/logout', [giftController::class, 'logout'])->name('logout'); 
 
 
 // admin controller
@@ -140,12 +141,20 @@ Route::get('/asianproduct', [adminController::class, 'addAsianProduct']);
 Route::get('/showasianproduct', [adminController::class, 'showAsianProduct']);   
 Route::get('/editasian_products/{id}', [adminController::class, 'editAsianProduct']);   
 Route::post('/updateasian_products/{id}', [adminController::class, 'updateAsianProduct']);   
+Route::get('/order', [adminController::class, 'order']);   
+Route::post('/send_email/{id}', [adminController::class, 'sendEmail']);   
+Route::post('/send_email_notification/{id}', [adminController::class, 'sendEmailNotification']);   
 
 Route::post('/addusa_products', [adminController::class, 'postusaprod']);   
 Route::post('/adduk_products', [adminController::class, 'postukprod']);   
 Route::post('/addasianproduct', [adminController::class, 'postAsianprod']);   
 Route::post('/addcanada_products', [adminController::class, 'postCanadaprod']);   
 Route::post('/addeurope_products', [adminController::class, 'postEuropeprod']);   
+Route::post('/deleteasian_product/{id}', [adminController::class, 'deleteAsian']);   
+Route::post('/deletecanada_product/{id}', [adminController::class, 'deleteCanada']);   
+Route::post('/deleteeuro_product/{id}', [adminController::class, 'deleteEurope']);   
+Route::post('/deleteuk_product/{id}', [adminController::class, 'deleteUk']);   
+Route::post('/deleteusa_product/{id}', [adminController::class, 'deleteUsa']);   
 
 // payments
 Route::post('/pay', [PaymentController::class, 'redirectToGateway'])->name('pay');

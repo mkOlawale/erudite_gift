@@ -8,6 +8,10 @@ use App\Models\ukproduct;
 use App\Models\asianproducts;
 use App\Models\canadaproduct;
 use App\Models\europeproduct;
+use App\Models\orders;
+use App\Notifications\sendUserEmail;
+use Notification;
+
 
 class adminController extends Controller
 {
@@ -27,6 +31,32 @@ class adminController extends Controller
     public function addAsianProduct(){
         return view('admin.addAsianproduct');
     }
+    public function deleteAsian($id){
+        $product = asianproducts::find($id);
+        $product->delete();
+        return redirect()->back()->with('message'. 'This product is being deleted successfully');
+    }
+    public function deleteCanada($id){
+        $product = canadaproduct::find($id);
+        $product->delete();
+        return redirect()->back()->with('message'. 'This product is being deleted successfully');
+    }
+    public function deleteEurope($id){
+        $product = europeproduct::find($id);
+        $product->delete();
+        return redirect()->back()->with('message'. 'This product is being deleted successfully');
+    }
+    public function deleteUk($id){
+        $product = ukproduct::find($id);
+        $product->delete();
+        return redirect()->back()->with('message'. 'This product is being deleted successfully');
+    }
+    public function deleteUsa($id){
+        $product = usaproduct::find($id);
+        $product->delete();
+        return redirect()->back()->with('message'. 'This product is being deleted successfully');
+    }
+
     public function postusaprod(Request $request){
         $product = new usaproduct;
 
@@ -259,4 +289,39 @@ class adminController extends Controller
 
         return redirect()->back()->with('message', 'Product updated succesfully');
     }
+    public function order(){
+
+        $orders = orders::all();
+
+        return view('admin.order', compact('orders'));
+    }
+    public function sendEmail($id){
+
+        $order = order::find($id);
+
+        return view('admin.send_email', compact('order'));
+    }
+    public function sendEmailNotification(Request $request, $id){
+
+        $order = order::find($id);
+// there is a little confusion
+// just gerring started here
+        $details = [
+            'greeting' => $request->greeting,
+
+            'firstline' => $request->firstline,
+
+            'body' => $request->body,
+
+            'button' => $request->button,
+
+            'url' => $request->url,
+
+            'lastline' => $request->lastline,
+        ];
+
+        Notification::Send($order, new sendUserEmail($details));
+
+        return redirect()->back()->with('message', "Email has been succesfully sent to the user");
+}
 }

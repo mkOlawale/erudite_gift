@@ -65,7 +65,8 @@ class PaymentController extends Controller
             $order->first_name = $paymentDetails['data']['metadata']['first_name'];
             $image = $paymentDetails['data']['metadata']['image'];
             $image_name = time().'.'.$image->getClientOriginalExtension();
-            $order->image = $image;
+            $paymentDetails['data']['metadata']['image']->move('order', $image_name);
+            $order->image = $image_name;
             $order->last_name = $paymentDetails['data']['metadata']['last_name'];
             $order->country = $paymentDetails['data']['metadata']['country'];
             $order->state = $paymentDetails['data']['metadata']['state'];
@@ -74,6 +75,7 @@ class PaymentController extends Controller
             $order->snumber = $paymentDetails['data']['metadata']['snumber'];
             $order->Reciever_number = $paymentDetails['data']['metadata']['Reciever_number'];
             $order->notes = $paymentDetails['data']['metadata']['notes'];
+            $order->price = $paymentDetails['data']['amount'];
             $order->status = "Success";
             $order->save();
             $payment = new payments;

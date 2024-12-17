@@ -88,11 +88,11 @@
             </div>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="{{ url('view_category') }}">
+            <a class="nav-link" href="{{ url('view_payment') }}">
               <span class="menu-icon">
                 <i class="mdi mdi-playlist-play"></i>
               </span>
-              <span class="menu-title">Category C</span>
+              <span class="menu-title">Payment</span>
             </a>
           </li>
           <li class="nav-item menu-items">
@@ -100,7 +100,7 @@
               <span class="menu-icon">
                 <i class="mdi mdi-playlist-play"></i>
               </span>
-              <span class="menu-title">Order O</span>
+              <span class="menu-title">Order</span>
             </a>
           </li>
         </ul>
