@@ -12,7 +12,7 @@
     <div class="navbar-container">
         <!-- Logo -->
         <a href="{{ url('/') }}" class="logo">
-            <img src="images/logo.png" alt="Image 2" width="120" height="50">
+            <img src="../images/logo.png" alt="Image 2" width="120" height="50">
         </a>
 
         <!-- Category Dropdown -->
@@ -84,9 +84,9 @@
       <!-- slider animation -->
       <div class="slider-container">
         <div class="slider">
-            <div class="slide"><img src="images/resume.png" alt="Image 2"></div>
-            <div class="slide"><img src="images/smile.jpg" alt="Image 2"></div>
-            <div class="slide"><img src="images/wat.jpg" alt="Image 1"></div>
+            <div class="slide"><img src="../images/resume.png" alt="Image 2"></div>
+            <div class="slide"><img src="../images/smile.jpg" alt="Image 2"></div>
+            <div class="slide"><img src="../images/wat.jpg" alt="Image 1"></div>
         </div>
       </div>
       <a href="https://wa.me/2348144179815" class="whatsapp-support">
