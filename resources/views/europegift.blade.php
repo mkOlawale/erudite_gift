@@ -11,7 +11,9 @@
   <header class="navbar">
     <div class="navbar-container">
         <!-- Logo -->
-        <a href="{{ url('/')}}" class="logo">EruditeGift</a>
+        <a href="{{ url('/') }}" class="logo">
+            <img src="images/logo.png" alt="Image 2" width="120" height="50">
+        </a>
 
         <!-- Category Dropdown -->
         <div class="dropdown">
@@ -82,12 +84,14 @@
       <!-- slider animation -->
       <div class="slider-container">
         <div class="slider">
-          <div class="slide"><img src="../images/slider.png" alt="Image 1"></div>
-          <div class="slide"><img src="../images/slider.png" alt="Image 2"></div>
-          <div class="slide"><img src="../images/slider2.jpg" alt="Image 3"></div>
+            <div class="slide"><img src="images/resume.png" alt="Image 2"></div>
+            <div class="slide"><img src="images/smile.jpg" alt="Image 2"></div>
+            <div class="slide"><img src="images/wat.jpg" alt="Image 1"></div>
         </div>
       </div>
-      
+      <a href="https://wa.me/2348144179815" class="whatsapp-support">
+        <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp Support">
+    </a>
       <!--****** slider animation ends here ******-->
     <div>
       <h1 style="text-align: center; padding: 10px;">Available Gift to Europe</h1>  
@@ -105,58 +109,58 @@
             <img src="../images/gift-box.png" alt="" width="30" height="30">
 
             <p class="prod_card_container-category">Teddy Bears</p>
-            <a href="{{ url('europe/flower')}}" class="prod_card_container-title">Click Here</a>
+            <a href="{{ url('europe/teddy')}}" class="prod_card_container-title">Click Here</a>
 
         </div>
         <div class="prod_card_container">
             <img src="../images/gift-box.png" alt="" width="30" height="30">
             <p class="prod_card_container-category">Rings</p>
-           <a href="{{ url('europe/flower')}}" class="prod_card_container-title">Click Here</a>
+           <a href="{{ url('europe/rings')}}" class="prod_card_container-title">Click Here</a>
         </div>
         <div class="prod_card_container">
             <img src="../images/gift-box.png" alt="" width="30" height="30">
             <p class="prod_card_container-category">Necklace & Jewelries</p>
-            <a href="{{ url('europe/flower')}}" class="prod_card_container-title">Click Here</a>
+            <a href="{{ url('europe/jewelry')}}" class="prod_card_container-title">Click Here</a>
         </div>
         <div class="prod_card_container">
             <img src="../images/gift-box.png" alt="" width="30" height="30">
             <p class="prod_card_container-category">Perfumes</p>
-            <a href="{{ url('europe/flower')}}" class="prod_card_container-title">Click Here</a>
+            <a href="{{ url('europe/perfume')}}" class="prod_card_container-title">Click Here</a>
         </div>
         <div class="prod_card_container">
             <img src="../images/gift-box.png" alt="" width="30" height="30">
             <p class="prod_card_container-category">Watches</p>
-            <a href="{{ url('europe/flower')}}" class="prod_card_container-title">Click Here</a>
+            <a href="{{ url('europe/watch')}}" class="prod_card_container-title">Click Here</a>
         </div>
         <div class="prod_card_container">
             <img src="../images/gift-box.png" alt="" width="30" height="30">
             <p class="prod_card_container-category">Kids Items</p>
-            <a href="{{ url('europe/flower')}}" class="prod_card_container-title">Click Here</a>
+            <a href="{{ url('europe/kids')}}" class="prod_card_container-title">Click Here</a>
         </div>
         <div class="prod_card_container">
             <img src="../images/gift-box.png" alt="" width="30" height="30">
             <p class="prod_card_container-category">Clothing & Accessories</p>
-            <a href="{{ url('europe/flower')}}" class="prod_card_container-title">Click Here</a>
+            <a href="{{ url('europe/clothing')}}" class="prod_card_container-title">Click Here</a>
         </div>
         <div class="prod_card_container">
             <img src="../images/gift-box.png" alt="" width="30" height="30">
             <p class="prod_card_container-category">Food</p>
-            <a href="{{ url('europe/flower')}}" class="prod_card_container-title">Click Here</a>
+            <a href="{{ url('europe/food')}}" class="prod_card_container-title">Click Here</a>
         </div>
         <div class="prod_card_container">
             <img src="../images/gift-box.png" alt="" width="30" height="30">
             <p class="prod_card_container-category">Adult Items</p>
-            <a href="{{ url('europe/flower')}}" class="prod_card_container-title">Click Here</a>
+            <a href="{{ url('europe/adult')}}" class="prod_card_container-title">Click Here</a>
         </div>
         <div class="prod_card_container">
             <img src="../images/gift-box.png" alt="" width="30" height="30">
             <p class="prod_card_container-category">Urgent Deliveries</p>
-            <a href="{{ url('europe/flower')}}" class="prod_card_container-title">Click Here</a>
+            <a href="{{ url('europe/urgent')}}" class="prod_card_container-title">Click Here</a>
         </div>
         <div class="prod_card_container">
             <img src="../images/gift-box.png" alt="" width="30" height="30">
             <p class="prod_card_container-category">Footwears</p>
-            <a href="{{ url('europe/flower')}}" class="prod_card_container-title">Click Here</a>
+            <a href="{{ url('europe/footwear')}}" class="prod_card_container-title">Click Here</a>
         </div>
 
     </div>
@@ -210,6 +214,26 @@
       
       // Automatically slide every 3 seconds
       setInterval(moveToNextSlide, 3000);
+      document.querySelector('.whatsapp-support').addEventListener('mouseenter', () => {
+            const tooltip = document.createElement('div');
+            tooltip.innerText = 'Chat with us on WhatsApp!';
+            tooltip.className = 'whatsapp-tooltip';
+            document.body.appendChild(tooltip);
+
+            const button = document.querySelector('.whatsapp-support');
+            const rect = button.getBoundingClientRect();
+
+            tooltip.style.position = 'absolute';
+            tooltip.style.top = `${rect.top - 30}px`; /* Position above the button */
+            tooltip.style.left = `${rect.left + rect.width / 2 - tooltip.offsetWidth / 2}px`;
+        });
+
+        document.querySelector('.whatsapp-support').addEventListener('mouseleave', () => {
+            const tooltip = document.querySelector('.whatsapp-tooltip');
+            if (tooltip) {
+                tooltip.remove();
+            }
+        });
     </script>
 </body>
 </html>

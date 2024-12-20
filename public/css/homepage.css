@@ -20,7 +20,7 @@
   }
   /* Navbar Styling */
   .navbar {
-    background-color: blue;
+    background-color: green;
     color: #fff;
     padding: 15px;
     display: flex;
@@ -135,7 +135,7 @@
   .mobile-menu {
     display: none;
     flex-direction: column;
-    background-color: blue;
+    background-color: green;
     position: absolute;
     width: 100%;
     top: 60px;
@@ -255,7 +255,7 @@
     text-decoration: none;
   }
   .footer_contain{
-    background-color: blue;
+    background-color: green;
     color: white;
     padding: 30px 30px;
     text-align: center;

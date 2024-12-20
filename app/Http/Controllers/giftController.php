@@ -11,6 +11,7 @@ use App\Models\otherproduct;
 use App\Models\canadaproduct;
 use App\Models\europeproduct;
 use App\Models\asianproducts;
+use App\Models\orders;
 
 
 class giftController extends Controller
@@ -82,7 +83,7 @@ class giftController extends Controller
         return view('paystack', compact('product'));
     }
     public function formAsian($id){
-        $product = asianproduct::find($id);
+        $product = asianproducts::find($id);
 
         return view('paystack', compact('product'));
     }
@@ -102,13 +103,19 @@ class giftController extends Controller
 
         $prod = canadaproduct::find($id);
 
-        return view('Us_product.product_details', compact('prod'));
+        return view('canada_product.product_details', compact('prod'));
     }
     public function AsianProductsDetails($id){
 
-        $prod = asianproduct::find($id);
+        $prod = asianproducts::find($id);
 
-        return view('Us_product.product_details', compact('prod'));
+        return view('asian_product.product_details', compact('prod'));
+    }
+    public function myorders(){
+
+        $orders = orders::where('user_id', auth()->user()->id)->get();
+
+        return view('orders', compact('orders'));
     }
     public function jewelry(){
         $product = usaproduct::where('Category','Necklace&Jewelries')->get();

@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <title>EruditeGift | send gift to all over the world</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -16,7 +16,9 @@
     <header class="navbar">
         <div class="navbar-container">
             <!-- Logo -->
-            <a href="#" class="logo">MyStore</a>
+            <a href="{{ url('/') }}" class="logo">
+                <img src="images/logo.png" alt="Image 2" width="120" height="50">
+            </a>
 
             <!-- Category Dropdown -->
             <div class="dropdown">
@@ -87,9 +89,11 @@
     <!-- slider animation -->
     <div class="slider-container">
         <div class="slider">
-            <div class="slide"><img src="images/slider.png" alt="Image 1"></div>
-            <div class="slide"><img src="images/slider.png" alt="Image 2"></div>
-            <div class="slide"><img src="images/slider2.jpg" alt="Image 3"></div>
+            <div class="slide"><img src="images/resume.png" alt="Image 2"></div>
+            <div class="slide"><img src="images/smile.jpg" alt="Image 2"></div>
+            <div class="slide"><img src="images/wat.jpg" alt="Image 1"></div>
+
+            {{-- <div class="slide"><img src="images/slider2.jpg" alt="Image 3"></div> --}}
         </div>
     </div>
 

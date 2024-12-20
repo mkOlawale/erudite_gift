@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>EruditeGift Admin Others</title>
+    <title>Admin EruditeGift</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
@@ -20,25 +20,26 @@
     <!-- Layout styles -->
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- End layout styles -->
-    <link rel="shortcut icon" href="assets/images/favicon.png" />
+    <link rel="shortcut icon" href="images/second_logo.png" type="">
     <style>
-        .div_center{
+        .table_container{
+          margin: auto;
+          text-align: center;
+          margin-top: 10px;
+          border: 2px solid skyblue;
+          width: 70%;
+        }
+        .txt_h2{
+            margin: 0 auto;
+            margin-top: 20px;
             text-align: center;
-            padding-bottom: 40px;
         }
-        .txt-font{
-          font-size: 30px;
-          padding-bottom: 40px;
+        .header_container{
+            background-color: skyblue;
         }
-        .input_container{
-          padding-bottom: 15px;
-        }
-        .input_color{
-          color: #333;
-        }
-        label{
-          display: inline-block;
-          width: 200px;
+        .img{
+            width: 100px;
+            height: 100px;
         }
     </style>
   </head>
@@ -59,59 +60,29 @@
                {{ session()->get('message') }}
             </div>
             @endif
-          <div class="div_center">
-            <h1 class="txt-font">Add Asian Products</h1>
 
-          <form action="{{ url('/addasianproduct') }}" method="POST" enctype="multipart/form-data">
-            @csrf
-          <div class="input_container">
-            <label for="Title">Title</label>
-            <input type="text" name="title" placeholder="Enter the title" class="input_color" required>
-          </div>
-          <div class="input_container">
-            <label for="Description">Product Description</label>
-            <input type="text" name="Description" placeholder="Write Description" class="input_color" required>
-          </div>
-         
-          <div class="input_container">
-            <label for="Price">Product Price</label>
-            <input type="number" name="price" placeholder="Product price" class="input_color" required>
-          </div>
-         
-          <div class="input_container">
-            <label for="category">Product Category</label>
-                <select name="Category" class="input_color" required>
-                  <option value="" selected="">Select a Category</option>
-                  <option value="Flowers&Notes">Flowers & Notes</option>
-                  <option value="TeddyBears">Teddy Bears</option>
-                  <option value="Rings">Rings</option>
-                  <option value="Necklace&Jewelries">Necklace & Jewelries</option>
-                  <option value="Perfumes">Perfumes</option>
-                  <option value="Watches">Watches</option>
-                  <option value="KidsItems">Kids Items</option>
-                  <option value="Clothing&Accessories">Clothing & Accessories</option>
-                  <option value="Food">Food</option>
-                  <option value="Adult Items">Adult Items</option>
-                  <option value="Urgent Deliveries">Urgent Deliveries</option>
-                  <option value="Footwears">Footwears</option>
-                 
-                </select>
-          </div>
-          <div class="input_container">
-            <label for="image">Product Image</label>
-            <input type="file" name="image">
-          </div>
-          <div class="input_container">
-            <input type="submit" class="btn btn-success" value="Add Product">
-          </div>
-
-        </form>
-          </div>
-       
-
+        <h1 class="txt_h2">All Products</h1>
+        <table class="table_container" style="width: 100%;">
+            <tr>
+                <th>user email</th>
+                <th>Amount</th>
+                <th>Status</th>
+                <th>Reference</th>
+                <th>Trans Id</th>
+            </tr>
+            @foreach($payments as $payment)
+            <tr>
+                <td>{{ $payment->email }}</td>
+                <td>{{ $payment->amount }}</td>
+                <td>{{ $payment->status }}</td>
+                <td>{{ $payment->ref_id }}</td>
+                <td>{{ $payment->trans_id }}</td>
+            </tr>
+            @endforeach
+        </table>
           </div>
         </div>
-
+        
         <!-- main-panel ends -->
       </div>
       <!-- page-body-wrapper ends -->

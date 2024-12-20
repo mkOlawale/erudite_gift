@@ -41,6 +41,7 @@ class PaymentController extends Controller
                     'Reciever_number' => $request->r_number,
                     'image' => $request->image,
                     'notes' => $request->notes,
+                    'category' => $request->Category,
             ],
                 ];
                 // dd($data['amount']);
@@ -72,6 +73,7 @@ class PaymentController extends Controller
             $order->state = $paymentDetails['data']['metadata']['state'];
             $order->city = $paymentDetails['data']['metadata']['city'];
             $order->address = $paymentDetails['data']['metadata']['address'];
+            $order->category = $paymentDetails['data']['metadata']['category'];
             $order->snumber = $paymentDetails['data']['metadata']['snumber'];
             $order->Reciever_number = $paymentDetails['data']['metadata']['Reciever_number'];
             $order->notes = $paymentDetails['data']['metadata']['notes'];
@@ -85,7 +87,7 @@ class PaymentController extends Controller
             $payment->ref_id = $paymentDetails['data']['reference'];
             $payment->trans_id = $paymentDetails['data']['id'];
             $payment->save();
-            return view('congrats')->with('payment succesful made');
+            return view('orders')->with('Congrats Order succesful Placed');
         }
         // Now you have the payment details,
         // you can store the authorization_code in your db to allow for recurrent subscriptions

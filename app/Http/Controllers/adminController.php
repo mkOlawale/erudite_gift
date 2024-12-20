@@ -11,6 +11,7 @@ use App\Models\europeproduct;
 use App\Models\orders;
 use App\Notifications\sendUserEmail;
 use Notification;
+use App\Models\payments;
 
 
 class adminController extends Controller
@@ -56,7 +57,6 @@ class adminController extends Controller
         $product->delete();
         return redirect()->back()->with('message'. 'This product is being deleted successfully');
     }
-
     public function postusaprod(Request $request){
         $product = new usaproduct;
 
@@ -102,6 +102,15 @@ class adminController extends Controller
         $product->save();
 
         return redirect()->back()->with('message', 'Product updated succesfully');
+    }
+    public function delivered($id){
+        $delivers = orders::find($id);
+
+        $delivers->delivery_status = "delivered";
+
+        $delivers->save();
+
+        return redirect()->back();
     }
     // uk products
     public function postukprod(Request $request){
@@ -220,19 +229,23 @@ class adminController extends Controller
         return redirect()->back()->with('message', 'Product is being added succesfully, No stress! shogbo omo iya mi!!');
     }
     public function showEuropeProduct(){
-        $product = ukproduct::all();
+        $product = europeproduct::all();
 
-        return view('admin.showuk', compact('product'));
+        return view('admin.showeurope', compact('product'));
+    }
+    public function Viewpayment(){
+        $payments = payments::all();
+        return view('admin.payment', compact('payments'));
     }
     public function editEuropeProducts($id){
 
-        $product = ukproduct::find($id);
+        $product = europeproduct::find($id);
         
-        return view('admin.updateuk', compact('product'));
+        return view('admin.updateeurope', compact('product'));
     }
     public function updateEuropeProducts(Request $request, $id){
 
-        $product = ukproduct::find($id);
+        $product = europeproduct::find($id);
 
         $product->title = $request->title;
 

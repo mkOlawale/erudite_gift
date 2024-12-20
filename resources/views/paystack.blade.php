@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Delivery info Checkout form</title>
+
     <style>
         *{
             /* padding: 0;
@@ -18,7 +19,7 @@
         }
         .payment_whole_container{
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(2, 1fr)!important;
         }
         .form_main{
            padding: 20px;
@@ -139,6 +140,7 @@
                      <label for="Reciever">Reciever First Name</label>
                 <input type="text" name="Rname" id="Rname" placeholder="Enter Reciever's first name">
                 <input type="hidden" name="title" id="title" value="{{ $product->title }}">
+                <input type="hidden" name="Category" id="Category" value="{{ $product->Category}}">
                 </div>
                 <div style="margin-left: 10px;">
                      <label for="Reciever">Reciever Others Name</label>
@@ -148,7 +150,7 @@
             </div>
             <div>
                 <label for="snumber">Your email</label>
-                <input type="email" name="email" > 
+                <input type="email" name="email" placeholder="Enter Your Email Address"> 
             </div>
             <div>
                 <label for="snumber">Your WhatsApp Number *</label>
@@ -204,11 +206,8 @@
 
             <input type="submit" value="Place Order">
         </div>
-
-
-
     </form>
      
     </div>
-</body>
-</html>
+  </body>
+  </html>

@@ -22,42 +22,74 @@
     <!-- End layout styles -->
     <link rel="shortcut icon" href="assets/images/favicon.png" />
     <style>
-       img{
-        max-width: 100px;
-        max-height: 100px;
-       }
-       h1{
-        font-size: 25px;
-        font-weight: bold;
-        text-align: center;
-        padding-bottom: 25px;
-       }
-       table, th, td{
-        padding: 1px;
-        border: 1px solid #333;
-       }
+    /* Table Container */
+.table-container {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 100%;
+    overflow-x: auto; /* Makes the table scrollable horizontally on smaller screens */
+    /* background: #fff; */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
-       .th_header{
-        background-color: blue;
-        color: #fff;
+/* Table Styling */
+.responsive-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 14px;
+}
+
+/* Table Header */
+.responsive-table thead {
+    background: #007bff;
+    color: #fff;
+}
+
+.responsive-table thead th {
+    padding: 12px 8px;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+/* Table Body */
+.responsive-table tbody tr:nth-child(even) {
+    background: #f8f9fa;
+}
+
+.responsive-table tbody tr:hover {
+    background: #f1f1f1;
+}
+
+.responsive-table tbody td {
+    padding: 10px 8px;
+    border: 1px solid #ddd;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .responsive-table thead {
+        display: none;
+    }
+
+    .responsive-table tbody td {
+        display: block;
+        text-align: right;
+        position: relative;
+        padding-left: 50%;
+        white-space: nowrap;
+    }
+
+    .responsive-table tbody td:before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
         font-weight: bold;
-       }
-       .txt_green{
-        color: green;
-       }
-       table{
-        margin-left: -20px;
-       }
-       th, td{
-        max-width: 100px;
-       }
-       .searchForm{
-        margin: 0 auto;
-        padding-left : 35%;
-       }
-       .INPUT_STYLE{
-        color: black;
-       }
+        text-transform: uppercase;
+    }
+}
+
     </style>
   </head>
   <body>
@@ -79,8 +111,9 @@
             <input type="text" name="searchText" class="INPUT_STYLE" placeholder="Enter Your search">
             <input type="submit">
           </form>
-
-          <table>
+       <div class="table-container">
+          <table class="responsive-table">
+            <thead>
             <tr>
                 <th class="th_header">F Name</th>
                 <th class="th_header">L Name</th>
@@ -98,7 +131,9 @@
                 <th class="th_header">Delievered</th>
                 <th class="th_header">send email</th>
             </tr>
+          </thead>
             @forelse($orders as $order)
+            <tbody>
             <tr>
                 <td>{{$order->first_name}}</td>
                 <td>{{$order->last_name}}</td>
@@ -116,8 +151,7 @@
                 <td>{{$order->status}}</td>
                 <td>{{$order->city}}</td>
                 <td>{{$order->notes}}</td>
-                <td>{{$order->delivery_status}}</td>
-             
+                <td>{{$order->delivery_status}}</td>             
                 <td>
                   @if($order->delivery_status == 'Processing')
                   <a href="{{ url('delivered', $order->id) }}" class="btn btn-primary" onclick="return confirm('Are you sure this product has been delivered')">Delivered</a>
@@ -134,12 +168,12 @@
             <tr>
               <td rowspan="1">No data found</td>
             </tr>
-
+          </tbody>
             @endforelse
           </table>
-         
-          </div>
-        </div>
+       </div>
+   </div>
+  </div>
 
         <!-- main-panel ends -->
       </div>

@@ -11,7 +11,9 @@
     <header class="navbar">
         <div class="navbar-container">
             <!-- Logo -->
-            <a href="{{ url('/')}}" class="logo">EruditeGift</a>
+            <a href="{{ url('/') }}" class="logo">
+                <img src="images/logo.png" alt="Image 2" width="120" height="50">
+            </a>
     
             <!-- Category Dropdown -->
             <div class="dropdown">

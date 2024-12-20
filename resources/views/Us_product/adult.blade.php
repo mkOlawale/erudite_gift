@@ -11,7 +11,9 @@
     <header class="navbar">
         <div class="navbar-container">
             <!-- Logo -->
-            <a href="{{ url('/')}}" class="logo">EruditeGift</a>
+            <a href="{{ url('/') }}" class="logo">
+                <img src="images/logo.png" alt="Image 2" width="120" height="50">
+            </a>
     
             <!-- Category Dropdown -->
             <div class="dropdown">
@@ -88,7 +90,7 @@
 
             <div class="main_prod_cobtainer">
                 @foreach($product as $prod)
-                <div class="main_prod_card">
+                <div class="main_prod_card"> 
                     <img src="/product/{{ $prod->image }}" width="180" height="180">
                     <div  class="info_container">
                         <p>
