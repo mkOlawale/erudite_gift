@@ -126,7 +126,7 @@
             </div>
             <div class="advert_card_txt">
                 <h2>24/7 Customer Care</h2>
-                <span>Reach us on our support line via WhatsApp or Call on +2348139768341</span>
+                <span>Reach us on our support line via WhatsApp or Call on +2348144179815</span>
             </div>
         </div>
         <div class="advert_card">
