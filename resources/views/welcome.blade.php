@@ -208,7 +208,7 @@
             </div>
         </div>
         <div>
-            <a href="#" style="color: white; padding: 20px; font-weight: bold;"> Developed by <span
+            <a href="https://wa.me/2348163445421" style="color: white; padding: 20px; font-weight: bold;"> Developed by <span
                     style="color: yellow;">MicroX</span></a>
         </div>
     </footer>
