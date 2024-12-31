@@ -165,6 +165,19 @@ class giftController extends Controller
         $product = usaproduct::where('Category','Watches')->get();
         return view('Us_product.watch', compact('product'));
     }
+    // changes on us
+    public function items(){
+        $product = usaproduct::where('Category','customizeItem')->get();
+        return view('Us_product.items', compact('product'));
+    }
+    public function fancard(){
+        $product = usaproduct::where('Category','Fancard&Atm')->get();
+        return view('Us_product.fancard', compact('product'));
+    }
+    public function document(){
+        $product = usaproduct::where('Category','Document')->get();
+        return view('Us_product.document', compact('product'));
+    }
     public function ProductsDetails($id){
 
         $product = product::find($id);
@@ -221,7 +234,19 @@ class giftController extends Controller
         $product = ukproduct::where('Category','Watches')->get();
         return view('Uk_product.watch', compact('product'));
     }
-
+    // changes on uk
+    public function ukitems(){
+        $product = ukproduct::where('Category','customizeItem')->get();
+        return view('Uk_product.items', compact('product'));
+    }
+    public function ukfancard(){
+        $product = ukproduct::where('Category','Fancard&Atm')->get();
+        return view('Uk_product.fancard', compact('product'));
+    }
+    public function ukdocument(){
+        $product = ukproduct::where('Category','Document')->get();
+        return view('Uk_product.document', compact('product'));
+    }
 
     // canada product single
     public function canadajewelry(){
@@ -271,6 +296,19 @@ class giftController extends Controller
     public function canadaWatch(){
         $product = canadaproduct::where('Category','Watches')->get();
         return view('canada_product.watch', compact('product'));
+    }
+      // changes on canada
+      public function canadaitems(){
+        $product = canadaproduct::where('Category','customizeItem')->get();
+        return view('canada_product.items', compact('product'));
+    }
+    public function canadafancard(){
+        $product = canadaproduct::where('Category','Fancard&Atm')->get();
+        return view('canada_product.fancard', compact('product'));
+    }
+    public function canadadocument(){
+        $product = canadaproduct::where('Category','Document')->get();
+        return view('canada_product.document', compact('product'));
     }
 
 
@@ -323,6 +361,19 @@ class giftController extends Controller
         $product = europeproduct::where('Category','Watches')->get();
         return view('Europe_product.watch', compact('product'));
     }
+    // little edit on europe
+    public function europeitems(){
+        $product = europeproduct::where('Category','customizeItem')->get();
+        return view('Europe_product.items', compact('product'));
+    }
+    public function europefancard(){
+        $product = europeproduct::where('Category','Fancard&Atm')->get();
+        return view('Europe_product.fancard', compact('product'));
+    }
+    public function europedocument(){
+        $product = europeproduct::where('Category','Document')->get();
+        return view('Europe_product.document', compact('product'));
+    }
 
 
     // Asian product single
@@ -374,6 +425,19 @@ class giftController extends Controller
         $product = asianproducts::where('Category','Watches')->get();
         return view('asian_product.watch', compact('product'));
     }
+        // changes on us
+        public function items(){
+            $product = asianproducts::where('Category','customizeItem')->get();
+            return view('asian_product.items', compact('product'));
+        }
+        public function fancard(){
+            $product = asianproducts::where('Category','Fancard&Atm')->get();
+            return view('asian_product.fancard', compact('product'));
+        }
+        public function document(){
+            $product = asianproducts::where('Category','Document')->get();
+            return view('asian_product.document', compact('product'));
+        }
     public function testPayment(Request $request){
             dd($request->product_image);
          

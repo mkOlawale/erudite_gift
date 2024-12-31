@@ -22,6 +22,9 @@ use App\Http\Middleware\userChecker;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/testing', function () {
+    return view('others');
+});
 
 Route::middleware([
     'auth:sanctum',
@@ -57,6 +60,9 @@ Route::get('/us/rings', [giftController::class, 'usaRings']);
 Route::get('/us/teddy', [giftController::class, 'usaTeddy']);   
 Route::get('/us/urgent', [giftController::class, 'usaUrgent']);   
 Route::get('/us/watch', [giftController::class, 'usaWatch']);   
+Route::get('/us/items', [giftController::class, 'items']);   
+Route::get('/us/fancard', [giftController::class, 'fancard']);   
+Route::get('/us/document', [giftController::class, 'document']);   
 Route::get('/usa_productdetails/{id}', [giftController::class, 'UsaProductsDetails']);   
 Route::get('/buy_usa/{id}', [giftController::class, 'formUsa']);   
 // product single United Kingdom
@@ -72,6 +78,9 @@ Route::get('uk/rings', [giftController::class, 'ukRings']);
 Route::get('uk/teddy', [giftController::class, 'ukTeddy']);   
 Route::get('uk/urgent', [giftController::class, 'ukUrgent']);   
 Route::get('uk/watch', [giftController::class, 'ukWatch']);  
+Route::get('/uk/items', [giftController::class, 'ukitems']);   
+Route::get('/uk/fancard', [giftController::class, 'ukfancard']);   
+Route::get('/uk/document', [giftController::class, 'ukdocument']); 
 Route::get('/uk_productdetails/{id}', [giftController::class, 'UkProductsDetails']); 
 Route::get('/buy_uk/{id}', [giftController::class, 'formUk']);   
   
@@ -89,6 +98,9 @@ Route::get('canada/rings', [giftController::class, 'canadaRings']);
 Route::get('canada/teddy', [giftController::class, 'canadaTeddy']);   
 Route::get('canada/urgent', [giftController::class, 'canadaUrgent']);   
 Route::get('canada/watch', [giftController::class, 'canadaWatch']);   
+Route::get('/canada/items', [giftController::class, 'canadaitems']);   
+Route::get('/canada/fancard', [giftController::class, 'canadafancard']);   
+Route::get('/canada/document', [giftController::class, 'canadadocument']);   
 Route::get('/canada_productdetails/{id}', [giftController::class, 'CanadaProductsDetails']);
 Route::get('/buy_canada/{id}', [giftController::class, 'formCanada']);   
 // product single Europe
@@ -103,7 +115,10 @@ Route::get('europe/perfume', [giftController::class, 'europePerfume']);
 Route::get('europe/rings', [giftController::class, 'europeRings']);   
 Route::get('europe/teddy', [giftController::class, 'europeTeddy']);   
 Route::get('europe/urgent', [giftController::class, 'europeUrgent']);   
-Route::get('europe/watch', [giftController::class, 'europeWatch']);   
+Route::get('europe/watch', [giftController::class, 'europeWatch']);  
+Route::get('/europe/items', [giftController::class, 'europeitems']);   
+Route::get('/europe/fancard', [giftController::class, 'europefancard']);   
+Route::get('/europe/document', [giftController::class, 'europedocument']);  
 Route::get('/europe_productdetails/{id}', [giftController::class, 'EuropeProductsDetails']);
 Route::get('/buy_europe/{id}', [giftController::class, 'formEurope']);   
 
@@ -119,7 +134,10 @@ Route::get('asian/perfume', [giftController::class, 'asianPerfume']);
 Route::get('asian/rings', [giftController::class, 'asianRings']);   
 Route::get('asian/teddy', [giftController::class, 'asianTeddy']);   
 Route::get('asian/urgent', [giftController::class, 'asianUrgent']);   
-Route::get('asian/watch', [giftController::class, 'asianWatch']);   
+Route::get('asian/watch', [giftController::class, 'asianWatch']);  
+Route::get('/asian/items', [giftController::class, 'asianitems']);   
+Route::get('/asian/fancard', [giftController::class, 'asianfancard']);   
+Route::get('/asian/document', [giftController::class, 'asiandocument']);   
 Route::get('/asian_productdetails/{id}', [giftController::class, 'AsianProductsDetails']);
 Route::get('/buy_asian/{id}', [giftController::class, 'formAsian']);   
 Route::post('/logout', [giftController::class, 'logout'])->name('logout'); 
