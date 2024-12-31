@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>EruditeGift | send gift to all over the world</title>
+    <title>EruditeGift | send gift to all over the world now</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -85,7 +85,7 @@
             @endif
         </div>
     </header>
-    <br> <br>
+    <br> <br> <br>
     <!-- slider animation -->
     <div class="slider-container">
         <div class="slider">
