@@ -27,6 +27,14 @@ class giftController extends Controller
          return view('welcome');
         }
     }
+    public function search(Request $request){
+         $searchText = $request->search;
+
+         $product = usaproduct::where('title', 'LIKE', "%$searchText%")
+              ->orWhere('title', 'LIKE', "%$searchText%")
+              ->orWhere('Description', 'LIKE', "%$searchText%")->get();
+          return view('searchresult', compact('product', 'searchText'));
+    }
     public function logout(Request $request)
     {
         Auth::logout(); // Log out the authenticated user
@@ -426,15 +434,15 @@ class giftController extends Controller
         return view('asian_product.watch', compact('product'));
     }
         // changes on us
-        public function items(){
+        public function asianitems(){
             $product = asianproducts::where('Category','customizeItem')->get();
             return view('asian_product.items', compact('product'));
         }
-        public function fancard(){
+        public function asianfancard(){
             $product = asianproducts::where('Category','Fancard&Atm')->get();
             return view('asian_product.fancard', compact('product'));
         }
-        public function document(){
+        public function asiandocument(){
             $product = asianproducts::where('Category','Document')->get();
             return view('asian_product.document', compact('product'));
         }

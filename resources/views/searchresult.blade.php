@@ -1,7 +1,7 @@
 @include('layouts.header')
+
     <div class="title_container">
-        <p>Home / Shop / US STORE / Documents to Us Store</p>
-        <h1>Documents to Us Store </h1>
+        <h1>Your Search result for <span style="color: green; font-weight: bold;"> {{ $searchText }}</span></h1>
     </div>
     <div class="prod_whole_container">
         <div class="second_flexible_container">

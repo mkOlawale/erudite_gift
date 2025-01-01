@@ -1,7 +1,8 @@
 @include('layouts.header')
+
     <div class="title_container">
-        <p>Home / Shop / US STORE / Documents to Us Store</p>
-        <h1>Documents to Us Store </h1>
+        <p>Home / Shop / Uk STORE / Customize Items to Us Store</p>
+        <h1>Customize Items Uk Store</h1>
     </div>
     <div class="prod_whole_container">
         <div class="second_flexible_container">
@@ -13,7 +14,7 @@
                     <img src="/product/{{ $prod->image }}" width="180" height="180">
                     <div  class="info_container">
                         <p>
-                            <a href="{{ url('/usa_productdetails', $prod->id) }}" style="color: black;"> {{ $prod->title}} </a>
+                            <a href="{{ url('/uk_productdetails', $prod->id) }}" style="color: black;"> {{ $prod->title}} </a>
                         </p>
                         <h5>#{{ $prod->price}}</h5>
                         <button><a href="{{ url('/buy_usa', $prod->id) }}">Buy Now</a></button>
@@ -36,3 +37,4 @@
     </div>
     </div>
     @include('layouts.footer')
+   

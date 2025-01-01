@@ -34,9 +34,12 @@
             </div>
 
             <!-- Search Bar -->
-            <form class="search-bar">
-                <input type="text" placeholder="Search products...">
-                <button><img src="/images/search-icon.png" alt="Search"></button>
+            <form class="search-bar" action="{{ url('/search') }}" method="POST">
+                @csrf
+                <input type="text" name="search" placeholder="Search products...">
+                <button>
+                    <img src="/images/search-icon.png" alt="Search">
+                </button>
             </form>
             <!-- Cart Icon -->
             <div class="cart">

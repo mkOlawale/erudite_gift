@@ -13,7 +13,7 @@
       <!--****** slider animation ends here ******-->
     <div>
       <h1 style="text-align: center; padding: 10px;">Available Gift to Europe</h1>  
-    </div> <br>
+    </div> <br> 
     <div class="prod_feed_container">
      
         <div class="prod_card_container">  
@@ -83,17 +83,17 @@
         <div class="prod_card_container">
             <img src="../images/gift-box.png" alt="" width="30" height="30">
             <p class="prod_card_container-category">Customize Items</p>
-            <a href="{{ url('us/adult')}}" class="prod_card_container-title">Click Here</a>
+            <a href="{{ url('europe/items')}}" class="prod_card_container-title">Click Here</a>
         </div>
         <div class="prod_card_container">
             <img src="../images/gift-box.png" alt="" width="30" height="30">
             <p class="prod_card_container-category">Customize Fan Card & Atm</p>
-            <a href="{{ url('us/urgent')}}" class="prod_card_container-title">Click Here</a>
+            <a href="{{ url('europe/fancard')}}" class="prod_card_container-title">Click Here</a>
         </div>
         <div class="prod_card_container">
             <img src="../images/gift-box.png" alt="" width="30" height="30">
             <p class="prod_card_container-category">Document</p>
-            <a href="{{ url('us/footwear')}}" class="prod_card_container-title">Click Here</a>
+            <a href="{{ url('europe/document')}}" class="prod_card_container-title">Click Here</a>
         </div>
     </div>
     @include('layouts.footer')

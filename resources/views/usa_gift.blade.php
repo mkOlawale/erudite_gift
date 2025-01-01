@@ -20,7 +20,7 @@
             <img src="../images/gift-box.png" alt="" width="30" height="30">
             <p class="prod_card_container-category">Flowers & Notes</p>
             <a href="{{ url('us/flower')}}" class="prod_card_container-title">Click Here</a>
-
+ 
             
         </div>
         <div class="prod_card_container">

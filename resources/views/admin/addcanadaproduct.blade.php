@@ -94,6 +94,9 @@
                   <option value="Adult Items">Adult Items</option>
                   <option value="Urgent Deliveries">Urgent Deliveries</option>
                   <option value="Footwears">Footwears</option>
+                  <option value="customizeItem">Customize Items</option>
+                  <option value="Fancard&Atm">Fan Card & Atm</option>
+                  <option value="Document">Documents</option>
                  
                 </select>
           </div>
