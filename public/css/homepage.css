@@ -450,6 +450,10 @@
         background-image: url("../images/documents.png");
     background-blend-mode: multiply;
 }
+.prod_card_container:nth-child(16){
+    background-image: url("../images/car.webp");
+    background-blend-mode: multiply;
+}
   /* feed container ends here*/
   /* each product page styling starts here */
   .title_container{

@@ -35,6 +35,27 @@ class giftController extends Controller
               ->orWhere('Description', 'LIKE', "%$searchText%")->get();
           return view('searchresult', compact('product', 'searchText'));
     }
+    // car keys rendering
+    public function car(){
+        $product = usaproduct::where('Category','car')->get();
+        return view('Us_product.car', compact('product'));
+    }
+    public function ukCar(){
+        $product = ukproduct::where('Category','car')->get();
+        return view('Uk_product.car', compact('product'));
+    }
+    public function canadaCar(){
+        $product = canadaproduct::where('Category','car')->get();
+        return view('canada_product.car', compact('product'));
+    }
+    public function europeCar(){
+        $product = europeproduct::where('Category','car')->get();
+        return view('Europe_product.car', compact('product'));
+    }
+    public function asiancar(){
+        $product = asianproducts::where('Category','car')->get();
+        return view('asian_product.car', compact('product'));
+    }
     public function logout(Request $request)
     {
         Auth::logout(); // Log out the authenticated user

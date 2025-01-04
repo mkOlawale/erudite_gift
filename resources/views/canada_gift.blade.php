@@ -95,5 +95,10 @@
             <p class="prod_card_container-category">Document</p>
             <a href="{{ url('canada/document')}}" class="prod_card_container-title">Click Here</a>
         </div>
+        <div class="prod_card_container">
+            <img src="../images/gift-box.png" alt="" width="30" height="30">
+            <p class="prod_card_container-category">Car Key</p>
+            <a href="{{ url('canada/car')}}" class="prod_card_container-title">Click Here</a>
+        </div>
     </div>
     @include('layouts.footer')

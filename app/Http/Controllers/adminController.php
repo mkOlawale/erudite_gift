@@ -9,6 +9,7 @@ use App\Models\asianproducts;
 use App\Models\canadaproduct;
 use App\Models\europeproduct;
 use App\Models\orders;
+use App\Models\User;
 use App\Notifications\sendUserEmail;
 use Notification;
 use App\Models\payments;
@@ -16,7 +17,10 @@ use App\Models\payments;
 
 class adminController extends Controller
 {
-    //
+    public function AllUser(){
+        $users = User::all();
+        return view('admin.user', compact('users'));
+    }
     public function addUsaProduct(){
         return view('admin.addusaproduct');
     }
