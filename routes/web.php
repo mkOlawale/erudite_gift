@@ -39,7 +39,6 @@ Route::middleware([
 // Route::post('/test_produ', [giftController::class, 'testPayment']);     
 Route::get('/redirect', [giftController::class, 'redirect']);     
 
-Route::middleware([userChecker::class])->group(function(){
 Route::get('/gift/usa', [giftController::class, 'us_available_gift']);     
 Route::get('/gift/united_kingdom', [giftController::class, 'gift_to_uk']);     
 Route::get('/gift/canada', [giftController::class, 'canadaGift']);     
@@ -65,7 +64,6 @@ Route::get('/us/fancard', [giftController::class, 'fancard']);
 Route::get('/us/document', [giftController::class, 'document']);   
 Route::get('us/car', [giftController::class, 'car']);   
 Route::get('/usa_productdetails/{id}', [giftController::class, 'UsaProductsDetails']);   
-Route::get('/buy_usa/{id}', [giftController::class, 'formUsa']);   
 // product single United Kingdom
 Route::get('uk/jewelry', [giftController::class, 'ukjewelry']);   
 Route::get('uk/adult', [giftController::class, 'ukdult']);   
@@ -84,7 +82,6 @@ Route::get('uk/fancard', [giftController::class, 'ukfancard']);
 Route::get('uk/document', [giftController::class, 'ukdocument']); 
 Route::get('uk/car', [giftController::class, 'ukCar']); 
 Route::get('/uk_productdetails/{id}', [giftController::class, 'UkProductsDetails']); 
-Route::get('/buy_uk/{id}', [giftController::class, 'formUk']);   
   
 
 // product single Canada
@@ -105,7 +102,6 @@ Route::get('canada/fancard', [giftController::class, 'canadafancard']);
 Route::get('canada/document', [giftController::class, 'canadadocument']);   
 Route::get('canada/car', [giftController::class, 'canadaCar']);   
 Route::get('/canada_productdetails/{id}', [giftController::class, 'CanadaProductsDetails']);
-Route::get('/buy_canada/{id}', [giftController::class, 'formCanada']);   
 // product single Europe
 Route::get('europe/jewelry', [giftController::class, 'europejewelry']);   
 Route::get('europe/adult', [giftController::class, 'europedult']);   
@@ -124,7 +120,6 @@ Route::get('europe/fancard', [giftController::class, 'europefancard']);
 Route::get('europe/document', [giftController::class, 'europedocument']);  
 Route::get('europe/car', [giftController::class, 'europeCar']);  
 Route::get('/europe_productdetails/{id}', [giftController::class, 'EuropeProductsDetails']);
-Route::get('/buy_europe/{id}', [giftController::class, 'formEurope']);   
 
 // product single Asian
 Route::get('asian/jewelry', [giftController::class, 'asianjewelry']);   
@@ -144,13 +139,22 @@ Route::get('asian/fancard', [giftController::class, 'asianfancard']);
 Route::get('asian/document', [giftController::class, 'asiandocument']);   
 Route::get('asian/car', [giftController::class, 'asiancar']);   
 Route::get('/asian_productdetails/{id}', [giftController::class, 'AsianProductsDetails']);
+
+Route::middleware([userChecker::class])->group(function(){
+Route::get('/buy_usa/{id}', [giftController::class, 'formUsa']);   
+Route::get('/buy_uk/{id}', [giftController::class, 'formUk']);   
+Route::get('/buy_canada/{id}', [giftController::class, 'formCanada']);   
+Route::get('/buy_europe/{id}', [giftController::class, 'formEurope']);   
 Route::get('/buy_asian/{id}', [giftController::class, 'formAsian']);   
+
 Route::post('/logout', [giftController::class, 'logout'])->name('logout'); 
 Route::get('/orders', [giftController::class, 'myorders']); 
+
 
 Route::post('/pay', [PaymentController::class, 'redirectToGateway'])->name('pay');
 Route::get('/payment/callback', [PaymentController::class, 'handleGatewayCallback']);
 });
+
 Route::middleware([admincheck::class])->group(function(){
 // admin controller
 Route::get('/usa_product', [adminController::class, 'addUsaProduct']);   
@@ -176,6 +180,7 @@ Route::post('/updateasian_products/{id}', [adminController::class, 'updateAsianP
 Route::get('/admin_order', [adminController::class, 'order']);   
 Route::post('/send_email/{id}', [adminController::class, 'sendEmail']);   
 Route::post('/send_email_notification/{id}', [adminController::class, 'sendEmailNotification']);   
+
 
 Route::post('/addusa_products', [adminController::class, 'postusaprod']);   
 Route::post('/adduk_products', [adminController::class, 'postukprod']);   
